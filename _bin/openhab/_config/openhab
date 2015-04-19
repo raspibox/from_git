@@ -1,0 +1,51 @@
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides:          starts openhab from home
+# Required-Start:    $local_fs $network $named $portmap $remote_fs $syslog $time
+# Required-Stop:     $local_fs $network $named $portmap $remote_fs $syslog $time
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Kurze Beschreibung
+# Description:       Längere Bechreibung
+### END INIT INFO
+# Author:
+
+# set ports for HTTP(S) server
+HTTP_PORT=8080
+HTTPS_PORT=8443
+
+if test -f /etc/default/openhab.conf; then
+    . /etc/default/openhab.conf
+else
+    echo "Please set OPENHABPATH in /etc/default/openhab.conf"
+    exit 1
+fi
+
+# Aktionen
+case "$1" in
+    start)
+        if [ -f /var/run/openhab.pid ]; then
+                echo "openhab seems to run allready. If not, please delete /var/run/openhab.pid"
+        else
+
+                cd $OPENHABPATH
+                # get path to equinox jar inside $OPENHABPATH folder
+                cp=$(find ./server -name "org.eclipse.equinox.launcher_*.jar" | sort | tail -1);
+
+                echo Launching the openHAB runtime..
+                java -Dosgi.clean=true -Declipse.ignoreApp=true -Dosgi.noShutdown=true -Djetty.port=$HTTP_PORT -Djetty.port.ssl=$HTTPS_PORT -Djetty.home=. -Dlogback.configurationFile=configurations/logback.xml -Dfelix.fileinstall.dir=addons -Djava.library.path=lib -Djava.security.auth.login.config=./etc/login.conf -Dorg.quartz.properties=./etc/quartz.properties -Dequinox.ds.block_timeout=240000 -Dequinox.scr.waitTimeOnBlock=60000 -Djava.awt.headless=true -jar $cp -console &> /dev/null
+
+                echo $! > /var/run/openhab.pid
+        fi
+        ;;
+    stop)
+        echo "stopping openhab"
+        kill `cat /var/run/openhab.pid`
+        rm /var/run/openhab.pid
+        ;;
+    restart)
+        echo "does not work"
+        ;;
+esac
+
+exit 0

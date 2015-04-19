@@ -14,7 +14,7 @@ GPIO.setmode(GPIO.BOARD)
 
 # Pin 26
 GPIO.setup(26, GPIO.OUT)
-while true:
+while 1:
 	print("26 auf low")
 	GPIO.output(26, GPIO.LOW)
 	time.sleep(0.5)

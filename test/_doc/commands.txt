@@ -1,0 +1,26 @@
+sudo apt-get update && sudo apt-get upgrade
+sudo apt-get install git-core
+
+cd ~
+git clone git://git.drogon.net/wiringPi
+cd wiringPi/
+./build
+
+gpio -v
+gpio -1 readall
+
+
+
+
+sudo apt-get install apache2 php5 php5-common libapache2-mod-php5
+sudo service apache stop
+sudo service apache start
+sudo service apache reload
+sudo service apache restart
+
+sudo echo "<?php phpinfo(); ?>" > /var/www/phptest.php
+
+
+
+
+

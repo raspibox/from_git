@@ -41,7 +41,7 @@ def MeasureDistance():
 # main function
 def main():
   try:
-    while True:
+    #while True:
       Distance = MeasureDistance()
       
       print("Measured Distance = %.1f cm" % Distance)
@@ -50,13 +50,12 @@ def main():
       
       fVolumen = 3.141 * 1 * (fFuellstand / 100)
       print("Restinhalt        = %.2f m3" % fVolumen)
-      print("----")
       fVol_proz = (fVolumen / 4.9) * 100
-      print (fVol_proz)
-
-      ret=os.system("curl -d \"\" http://10.0.0.50/middleware.php/data/81a5a3e0-3919-11e4-845f-53a328f742e1.json?value=" + str(fVol_proz))
-      print (ret)
-      time.sleep(1)
+      print("Restvolumen       = %.1f" % fVol_proz)
+      GPIO.cleanup()
+#      ret=os.system("curl -d \"\" http://10.0.0.50/middleware.php/data/81a5a3e0-3919-11e4-845f-53a328f742e1.json?value=" + str(fVol_proz))
+#      print (ret)
+#      time.sleep(1)
 
   # reset GPIO settings if user pressed Ctrl+C
   except KeyboardInterrupt:

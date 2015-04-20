@@ -39,6 +39,6 @@ GPIO.output(REL3, GPIO.LOW)
 #GPIO.output(REL3, GPIO.HIGH)
 #time.sleep(5)
 
-# aufraeumen
+# aufräumen
 #GPIO.cleanup()
 print("end")

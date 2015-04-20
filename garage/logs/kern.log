@@ -1,0 +1,891 @@
+Feb 16 14:02:58 raspberrypi kernel: imklog 5.8.11, log source = /proc/kmsg started.
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000] Booting Linux on physical CPU 0x0
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000] Initializing cgroup subsys cpu
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000] Initializing cgroup subsys cpuacct
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000] Linux version 3.18.7+ (dc4@dc4-XPS13-9333) (gcc version 4.8.3 20140303 (prerelease) (crosstool-NG linaro-1.13.1+bzr2650 - Linaro GCC 2014.03) ) #755 PREEMPT Thu Feb 12 17:14:31 GMT 2015
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000] CPU: ARMv6-compatible processor [410fb767] revision 7 (ARMv7), cr=00c5387d
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT nonaliasing instruction cache
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000] Machine model: Raspberry Pi Model B
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000] cma: Reserved 8 MiB at 0x1b800000
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000] Memory policy: Data cache writeback
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000] On node 0 totalpages: 114688
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000] free_area_init_node: node 0, pgdat c084d804, node_mem_map db474000
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000]   Normal zone: 896 pages used for memmap
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000]   Normal zone: 0 pages reserved
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000]   Normal zone: 114688 pages, LIFO batch:31
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000] pcpu-alloc: s0 r0 d32768 u32768 alloc=1*32768
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000] pcpu-alloc: [0] 0 
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 113792
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000] Kernel command line: dma.dmachans=0x7f35 bcm2708_fb.fbwidth=1824 bcm2708_fb.fbheight=984 bcm2708.boardrev=0xe bcm2708.serial=0xb3778f72 smsc95xx.macaddr=B8:27:EB:77:8F:72 bcm2708_fb.fbswap=1 sdhci-bcm2708.emmc_clock_freq=250000000 vc_mem.mem_base=0x1ec00000 vc_mem.mem_size=0x20000000  dwc_otg.lpm_enable=0 console=ttyAMA0,115200 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline rootwait
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000] PID hash table entries: 2048 (order: 1, 8192 bytes)
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000] Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000] Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000] Memory: 437208K/458752K available (5926K kernel code, 358K rwdata, 1876K rodata, 340K init, 734K bss, 21544K reserved)
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000] Virtual kernel memory layout:
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000]     fixmap  : 0xffc00000 - 0xffe00000   (2048 kB)
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000]     vmalloc : 0xdc800000 - 0xff000000   ( 552 MB)
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000]     lowmem  : 0xc0000000 - 0xdc000000   ( 448 MB)
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000]     modules : 0xbf000000 - 0xc0000000   (  16 MB)
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000]       .text : 0xc0008000 - 0xc07a6ad8   (7803 kB)
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000]       .init : 0xc07a7000 - 0xc07fc000   ( 340 kB)
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000]       .data : 0xc07fc000 - 0xc085588c   ( 359 kB)
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000]        .bss : 0xc085588c - 0xc090d128   ( 735 kB)
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000] Preemptible hierarchical RCU implementation.
+Feb 16 14:02:58 raspberrypi kernel: [    0.000000] NR_IRQS:522
+Feb 16 14:02:58 raspberrypi kernel: [    0.000024] sched_clock: 32 bits at 1000kHz, resolution 1000ns, wraps every 2147483648000ns
+Feb 16 14:02:58 raspberrypi kernel: [    0.000076] Switching to timer-based delay loop, resolution 1000ns
+Feb 16 14:02:58 raspberrypi kernel: [    0.000357] Console: colour dummy device 80x30
+Feb 16 14:02:58 raspberrypi kernel: [    0.001412] console [tty1] enabled
+Feb 16 14:02:58 raspberrypi kernel: [    0.001458] Calibrating delay loop (skipped), value calculated using timer frequency.. 2.00 BogoMIPS (lpj=10000)
+Feb 16 14:02:58 raspberrypi kernel: [    0.001534] pid_max: default: 32768 minimum: 301
+Feb 16 14:02:58 raspberrypi kernel: [    0.001915] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Feb 16 14:02:58 raspberrypi kernel: [    0.001979] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Feb 16 14:02:58 raspberrypi kernel: [    0.002987] Initializing cgroup subsys memory
+Feb 16 14:02:58 raspberrypi kernel: [    0.003080] Initializing cgroup subsys devices
+Feb 16 14:02:58 raspberrypi kernel: [    0.003139] Initializing cgroup subsys freezer
+Feb 16 14:02:58 raspberrypi kernel: [    0.003193] Initializing cgroup subsys net_cls
+Feb 16 14:02:58 raspberrypi kernel: [    0.003243] Initializing cgroup subsys blkio
+Feb 16 14:02:58 raspberrypi kernel: [    0.003369] CPU: Testing write buffer coherency: ok
+Feb 16 14:02:58 raspberrypi kernel: [    0.003483] ftrace: allocating 19479 entries in 58 pages
+Feb 16 14:02:58 raspberrypi kernel: [    0.111654] Setting up static identity map for 0x55d058 - 0x55d0b4
+Feb 16 14:02:58 raspberrypi kernel: [    0.114484] devtmpfs: initialized
+Feb 16 14:02:58 raspberrypi kernel: [    0.131926] VFP support v0.3: implementor 41 architecture 1 part 20 variant b rev 5
+Feb 16 14:02:58 raspberrypi kernel: [    0.135125] pinctrl core: initialized pinctrl subsystem
+Feb 16 14:02:58 raspberrypi kernel: [    0.137791] NET: Registered protocol family 16
+Feb 16 14:02:58 raspberrypi kernel: [    0.143260] DMA: preallocated 4096 KiB pool for atomic coherent allocations
+Feb 16 14:02:58 raspberrypi kernel: [    0.171428] cpuidle: using governor ladder
+Feb 16 14:02:58 raspberrypi kernel: [    0.201491] cpuidle: using governor menu
+Feb 16 14:02:58 raspberrypi kernel: [    0.201999] bcm2708.uart_clock = 3000000
+Feb 16 14:02:58 raspberrypi kernel: [    0.205089] No ATAGs?
+Feb 16 14:02:58 raspberrypi kernel: [    0.205155] hw-breakpoint: found 6 breakpoint and 1 watchpoint registers.
+Feb 16 14:02:58 raspberrypi kernel: [    0.205214] hw-breakpoint: maximum watchpoint size is 4 bytes.
+Feb 16 14:02:58 raspberrypi kernel: [    0.205281] mailbox: Broadcom VideoCore Mailbox driver
+Feb 16 14:02:58 raspberrypi kernel: [    0.205444] bcm2708_vcio: mailbox at f200b880
+Feb 16 14:02:58 raspberrypi kernel: [    0.205912] bcm_power: Broadcom power driver
+Feb 16 14:02:58 raspberrypi kernel: [    0.205968] bcm_power_open() -> 0
+Feb 16 14:02:58 raspberrypi kernel: [    0.206000] bcm_power_request(0, 8)
+Feb 16 14:02:58 raspberrypi kernel: [    0.706747] bcm_mailbox_read -> 00000080, 0
+Feb 16 14:02:58 raspberrypi kernel: [    0.706794] bcm_power_request -> 0
+Feb 16 14:02:58 raspberrypi kernel: [    0.706999] Serial: AMBA PL011 UART driver
+Feb 16 14:02:58 raspberrypi kernel: [    0.707236] dev:f1: ttyAMA0 at MMIO 0x20201000 (irq = 83, base_baud = 0) is a PL011 rev3
+Feb 16 14:02:58 raspberrypi kernel: [    1.096754] console [ttyAMA0] enabled
+Feb 16 14:02:58 raspberrypi kernel: [    1.169820] SCSI subsystem initialized
+Feb 16 14:02:58 raspberrypi kernel: [    1.173953] usbcore: registered new interface driver usbfs
+Feb 16 14:02:58 raspberrypi kernel: [    1.179753] usbcore: registered new interface driver hub
+Feb 16 14:02:58 raspberrypi kernel: [    1.185274] usbcore: registered new device driver usb
+Feb 16 14:02:58 raspberrypi kernel: [    1.192467] Switched to clocksource stc
+Feb 16 14:02:58 raspberrypi kernel: [    1.226881] FS-Cache: Loaded
+Feb 16 14:02:58 raspberrypi kernel: [    1.230199] CacheFiles: Loaded
+Feb 16 14:02:58 raspberrypi kernel: [    1.250417] NET: Registered protocol family 2
+Feb 16 14:02:58 raspberrypi kernel: [    1.256374] TCP established hash table entries: 4096 (order: 2, 16384 bytes)
+Feb 16 14:02:58 raspberrypi kernel: [    1.263787] TCP bind hash table entries: 4096 (order: 2, 16384 bytes)
+Feb 16 14:02:58 raspberrypi kernel: [    1.270347] TCP: Hash tables configured (established 4096 bind 4096)
+Feb 16 14:02:58 raspberrypi kernel: [    1.276862] TCP: reno registered
+Feb 16 14:02:58 raspberrypi kernel: [    1.280133] UDP hash table entries: 256 (order: 0, 4096 bytes)
+Feb 16 14:02:58 raspberrypi kernel: [    1.286056] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+Feb 16 14:02:58 raspberrypi kernel: [    1.292797] NET: Registered protocol family 1
+Feb 16 14:02:58 raspberrypi kernel: [    1.297809] RPC: Registered named UNIX socket transport module.
+Feb 16 14:02:58 raspberrypi kernel: [    1.303898] RPC: Registered udp transport module.
+Feb 16 14:02:58 raspberrypi kernel: [    1.308628] RPC: Registered tcp transport module.
+Feb 16 14:02:58 raspberrypi kernel: [    1.313393] RPC: Registered tcp NFSv4.1 backchannel transport module.
+Feb 16 14:02:58 raspberrypi kernel: [    1.321061] bcm2708_dma: DMA manager at f2007000
+Feb 16 14:02:58 raspberrypi kernel: [    1.326095] vc-mem: phys_addr:0x00000000 mem_base=0x1ec00000 mem_size:0x20000000(512 MiB)
+Feb 16 14:02:58 raspberrypi kernel: [    1.335971] futex hash table entries: 256 (order: -1, 3072 bytes)
+Feb 16 14:02:58 raspberrypi kernel: [    1.342236] audit: initializing netlink subsys (disabled)
+Feb 16 14:02:58 raspberrypi kernel: [    1.347963] audit: type=2000 audit(1.100:1): initialized
+Feb 16 14:02:58 raspberrypi kernel: [    1.368841] VFS: Disk quotas dquot_6.5.2
+Feb 16 14:02:58 raspberrypi kernel: [    1.373341] Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+Feb 16 14:02:58 raspberrypi kernel: [    1.382832] FS-Cache: Netfs 'nfs' registered for caching
+Feb 16 14:02:58 raspberrypi kernel: [    1.389949] NFS: Registering the id_resolver key type
+Feb 16 14:02:58 raspberrypi kernel: [    1.395273] Key type id_resolver registered
+Feb 16 14:02:58 raspberrypi kernel: [    1.399488] Key type id_legacy registered
+Feb 16 14:02:58 raspberrypi kernel: [    1.405028] msgmni has been set to 869
+Feb 16 14:02:58 raspberrypi kernel: [    1.411327] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
+Feb 16 14:02:58 raspberrypi kernel: [    1.419349] io scheduler noop registered
+Feb 16 14:02:58 raspberrypi kernel: [    1.423493] io scheduler deadline registered (default)
+Feb 16 14:02:58 raspberrypi kernel: [    1.429050] io scheduler cfq registered
+Feb 16 14:02:58 raspberrypi kernel: [    1.435623] BCM2708FB: allocated DMA memory 5bc00000
+Feb 16 14:02:58 raspberrypi kernel: [    1.440691] BCM2708FB: allocated DMA channel 0 @ f2007000
+Feb 16 14:02:58 raspberrypi kernel: [    1.471461] Console: switching to colour frame buffer device 228x61
+Feb 16 14:02:58 raspberrypi kernel: [    1.496879] bcm2708-dmaengine bcm2708-dmaengine: Load BCM2835 DMA engine driver
+Feb 16 14:02:58 raspberrypi kernel: [    1.504930] uart-pl011 dev:f1: no DMA platform data
+Feb 16 14:02:58 raspberrypi kernel: [    1.510776] vc-cma: Videocore CMA driver
+Feb 16 14:02:58 raspberrypi kernel: [    1.514982] vc-cma: vc_cma_base      = 0x00000000
+Feb 16 14:02:58 raspberrypi kernel: [    1.519809] vc-cma: vc_cma_size      = 0x00000000 (0 MiB)
+Feb 16 14:02:58 raspberrypi kernel: [    1.525435] vc-cma: vc_cma_initial   = 0x00000000 (0 MiB)
+Feb 16 14:02:58 raspberrypi kernel: [    1.545145] brd: module loaded
+Feb 16 14:02:58 raspberrypi kernel: [    1.555730] loop: module loaded
+Feb 16 14:02:58 raspberrypi kernel: [    1.559521] vchiq: vchiq_init_state: slot_zero = 0xdb800000, is_master = 0
+Feb 16 14:02:58 raspberrypi kernel: [    1.567863] Loading iSCSI transport class v2.0-870.
+Feb 16 14:02:58 raspberrypi kernel: [    1.574306] usbcore: registered new interface driver smsc95xx
+Feb 16 14:02:58 raspberrypi kernel: [    1.580317] dwc_otg: version 3.00a 10-AUG-2012 (platform bus)
+Feb 16 14:02:58 raspberrypi kernel: [    1.786795] Core Release: 2.80a
+Feb 16 14:02:58 raspberrypi kernel: [    1.790079] Setting default values for core params
+Feb 16 14:02:58 raspberrypi kernel: [    1.795134] Finished setting default values for core params
+Feb 16 14:02:58 raspberrypi kernel: [    2.001068] Using Buffer DMA mode
+Feb 16 14:02:58 raspberrypi kernel: [    2.004540] Periodic Transfer Interrupt Enhancement - disabled
+Feb 16 14:02:58 raspberrypi kernel: [    2.010505] Multiprocessor Interrupt Enhancement - disabled
+Feb 16 14:02:58 raspberrypi kernel: [    2.016247] OTG VER PARAM: 0, OTG VER FLAG: 0
+Feb 16 14:02:58 raspberrypi kernel: [    2.020721] Dedicated Tx FIFOs mode
+Feb 16 14:02:58 raspberrypi kernel: [    2.024846] WARN::dwc_otg_hcd_init:1047: FIQ DMA bounce buffers: virt = 0xdbc14000 dma = 0x5bc14000 len=9024
+Feb 16 14:02:58 raspberrypi kernel: [    2.034984] FIQ FSM acceleration enabled for :
+Feb 16 14:02:58 raspberrypi kernel: [    2.034984] Non-periodic Split Transactions
+Feb 16 14:02:58 raspberrypi kernel: [    2.034984] Periodic Split Transactions
+Feb 16 14:02:58 raspberrypi kernel: [    2.034984] High-Speed Isochronous Endpoints
+Feb 16 14:02:58 raspberrypi kernel: [    2.052141] dwc_otg: Microframe scheduler enabled
+Feb 16 14:02:58 raspberrypi kernel: [    2.052244] WARN::hcd_init_fiq:412: FIQ on core 0 at 0xc040116c
+Feb 16 14:02:58 raspberrypi kernel: [    2.063424] WARN::hcd_init_fiq:413: FIQ ASM at 0xc0401444 length 36
+Feb 16 14:02:58 raspberrypi kernel: [    2.074918] WARN::hcd_init_fiq:438: MPHI regs_base at 0xdc806000
+Feb 16 14:02:58 raspberrypi kernel: [    2.086217] dwc_otg bcm2708_usb: DWC OTG Controller
+Feb 16 14:02:58 raspberrypi kernel: [    2.096421] dwc_otg bcm2708_usb: new USB bus registered, assigned bus number 1
+Feb 16 14:02:58 raspberrypi kernel: [    2.109009] dwc_otg bcm2708_usb: irq 32, io mem 0x00000000
+Feb 16 14:02:58 raspberrypi kernel: [    2.119675] Init: Port Power? op_state=1
+Feb 16 14:02:58 raspberrypi kernel: [    2.128862] Init: Power Port (0)
+Feb 16 14:02:58 raspberrypi kernel: [    2.137697] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+Feb 16 14:02:58 raspberrypi kernel: [    2.149923] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+Feb 16 14:02:58 raspberrypi kernel: [    2.162318] usb usb1: Product: DWC OTG Controller
+Feb 16 14:02:58 raspberrypi kernel: [    2.172295] usb usb1: Manufacturer: Linux 3.18.7+ dwc_otg_hcd
+Feb 16 14:02:58 raspberrypi kernel: [    2.183172] usb usb1: SerialNumber: bcm2708_usb
+Feb 16 14:02:58 raspberrypi kernel: [    2.194084] hub 1-0:1.0: USB hub found
+Feb 16 14:02:58 raspberrypi kernel: [    2.203315] hub 1-0:1.0: 1 port detected
+Feb 16 14:02:58 raspberrypi kernel: [    2.213235] dwc_otg: FIQ enabled
+Feb 16 14:02:58 raspberrypi kernel: [    2.213262] dwc_otg: NAK holdoff enabled
+Feb 16 14:02:58 raspberrypi kernel: [    2.213275] dwc_otg: FIQ split-transaction FSM enabled
+Feb 16 14:02:58 raspberrypi kernel: [    2.213335] Module dwc_common_port init
+Feb 16 14:02:58 raspberrypi kernel: [    2.213911] usbcore: registered new interface driver usb-storage
+Feb 16 14:02:58 raspberrypi kernel: [    2.225844] mousedev: PS/2 mouse device common for all mice
+Feb 16 14:02:58 raspberrypi kernel: [    2.237804] bcm2835-cpufreq: min=700000 max=700000
+Feb 16 14:02:58 raspberrypi kernel: [    2.248524] sdhci: Secure Digital Host Controller Interface driver
+Feb 16 14:02:58 raspberrypi kernel: [    2.259948] sdhci: Copyright(c) Pierre Ossman
+Feb 16 14:02:58 raspberrypi kernel: [    2.269854] DMA channels allocated for the MMC driver
+Feb 16 14:02:58 raspberrypi kernel: [    2.312742] Load BCM2835 MMC driver
+Feb 16 14:02:58 raspberrypi kernel: [    2.327057] sdhci-pltfm: SDHCI platform and OF driver helper
+Feb 16 14:02:58 raspberrypi kernel: [    2.346432] ledtrig-cpu: registered to indicate activity on CPUs
+Feb 16 14:02:58 raspberrypi kernel: [    2.360230] hidraw: raw HID events driver (C) Jiri Kosina
+Feb 16 14:02:58 raspberrypi kernel: [    2.375598] usbcore: registered new interface driver usbhid
+Feb 16 14:02:58 raspberrypi kernel: [    2.387638] usbhid: USB HID core driver
+Feb 16 14:02:58 raspberrypi kernel: [    2.398415] TCP: cubic registered
+Feb 16 14:02:58 raspberrypi kernel: [    2.409237] Initializing XFRM netlink socket
+Feb 16 14:02:58 raspberrypi kernel: [    2.418884] Indeed it is in host mode hprt0 = 00021501
+Feb 16 14:02:58 raspberrypi kernel: [    2.429483] NET: Registered protocol family 17
+Feb 16 14:02:58 raspberrypi kernel: [    2.442776] Key type dns_resolver registered
+Feb 16 14:02:58 raspberrypi kernel: [    2.460035] mmc0: host does not support reading read-only switch, assuming write-enable
+Feb 16 14:02:58 raspberrypi kernel: [    2.484111] registered taskstats version 1
+Feb 16 14:02:58 raspberrypi kernel: [    2.502997] vc-sm: Videocore shared memory driver
+Feb 16 14:02:58 raspberrypi kernel: [    2.513493] mmc0: new high speed SDHC card at address 0002
+Feb 16 14:02:58 raspberrypi kernel: [    2.532563] [vc_sm_connected_init]: start
+Feb 16 14:02:58 raspberrypi kernel: [    2.552606] mmcblk0: mmc0:0002 00000 7.41 GiB 
+Feb 16 14:02:58 raspberrypi kernel: [    2.573952] [vc_sm_connected_init]: end - returning 0
+Feb 16 14:02:58 raspberrypi kernel: [    2.584742]  mmcblk0: p1 p2
+Feb 16 14:02:58 raspberrypi kernel: [    2.613915] EXT4-fs (mmcblk0p2): mounted filesystem with ordered data mode. Opts: (null)
+Feb 16 14:02:58 raspberrypi kernel: [    2.627869] VFS: Mounted root (ext4 filesystem) readonly on device 179:2.
+Feb 16 14:02:58 raspberrypi kernel: [    2.641682] devtmpfs: mounted
+Feb 16 14:02:58 raspberrypi kernel: [    2.651547] Freeing unused kernel memory: 340K (c07a7000 - c07fc000)
+Feb 16 14:02:58 raspberrypi kernel: [    2.722701] usb 1-1: new high-speed USB device number 2 using dwc_otg
+Feb 16 14:02:58 raspberrypi kernel: [    2.735541] Indeed it is in host mode hprt0 = 00001101
+Feb 16 14:02:58 raspberrypi kernel: [    2.953329] usb 1-1: New USB device found, idVendor=0424, idProduct=9512
+Feb 16 14:02:58 raspberrypi kernel: [    2.968724] usb 1-1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+Feb 16 14:02:58 raspberrypi kernel: [    2.983709] hub 1-1:1.0: USB hub found
+Feb 16 14:02:58 raspberrypi kernel: [    2.994220] hub 1-1:1.0: 3 ports detected
+Feb 16 14:02:58 raspberrypi kernel: [    3.282905] usb 1-1.1: new high-speed USB device number 3 using dwc_otg
+Feb 16 14:02:58 raspberrypi kernel: [    3.393177] usb 1-1.1: New USB device found, idVendor=0424, idProduct=ec00
+Feb 16 14:02:58 raspberrypi kernel: [    3.411103] usb 1-1.1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+Feb 16 14:02:58 raspberrypi kernel: [    3.430806] smsc95xx v1.0.4
+Feb 16 14:02:58 raspberrypi kernel: [    3.511844] smsc95xx 1-1.1:1.0 eth0: register 'smsc95xx' at usb-bcm2708_usb-1.1, smsc95xx USB 2.0 Ethernet, b8:27:eb:77:8f:72
+Feb 16 14:02:58 raspberrypi kernel: [    3.632857] usb 1-1.2: new full-speed USB device number 4 using dwc_otg
+Feb 16 14:02:58 raspberrypi kernel: [    3.778109] usb 1-1.2: New USB device found, idVendor=046d, idProduct=c52b
+Feb 16 14:02:58 raspberrypi kernel: [    3.792898] usb 1-1.2: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+Feb 16 14:02:58 raspberrypi kernel: [    3.812218] usb 1-1.2: Product: USB Receiver
+Feb 16 14:02:58 raspberrypi kernel: [    3.825689] usb 1-1.2: Manufacturer: Logitech
+Feb 16 14:02:58 raspberrypi kernel: [    3.855271] input: Logitech USB Receiver as /devices/platform/bcm2708_usb/usb1/1-1/1-1.2/1-1.2:1.0/0003:046D:C52B.0001/input/input0
+Feb 16 14:02:58 raspberrypi kernel: [    3.876314] hid-generic 0003:046D:C52B.0001: input,hidraw0: USB HID v1.11 Keyboard [Logitech USB Receiver] on usb-bcm2708_usb-1.2/input0
+Feb 16 14:02:58 raspberrypi kernel: [    3.928132] input: Logitech USB Receiver as /devices/platform/bcm2708_usb/usb1/1-1/1-1.2/1-1.2:1.1/0003:046D:C52B.0002/input/input1
+Feb 16 14:02:58 raspberrypi kernel: [    3.973613] hid-generic 0003:046D:C52B.0002: input,hiddev0,hidraw1: USB HID v1.11 Mouse [Logitech USB Receiver] on usb-bcm2708_usb-1.2/input1
+Feb 16 14:02:58 raspberrypi kernel: [    4.043232] hid-generic 0003:046D:C52B.0003: hiddev0,hidraw2: USB HID v1.11 Device [Logitech USB Receiver] on usb-bcm2708_usb-1.2/input2
+Feb 16 14:02:58 raspberrypi kernel: [    4.152912] usb 1-1.3: new high-speed USB device number 5 using dwc_otg
+Feb 16 14:02:58 raspberrypi kernel: [    4.283469] usb 1-1.3: New USB device found, idVendor=1a40, idProduct=0101
+Feb 16 14:02:58 raspberrypi kernel: [    4.312668] usb 1-1.3: New USB device strings: Mfr=0, Product=1, SerialNumber=0
+Feb 16 14:02:58 raspberrypi kernel: [    4.341033] usb 1-1.3: Product: USB 2.0 Hub
+Feb 16 14:02:58 raspberrypi kernel: [    4.363927] hub 1-1.3:1.0: USB hub found
+Feb 16 14:02:58 raspberrypi kernel: [    4.382959] hub 1-1.3:1.0: 4 ports detected
+Feb 16 14:02:58 raspberrypi kernel: [    7.674185] random: nonblocking pool is initialized
+Feb 16 14:02:58 raspberrypi kernel: [   11.647012] EXT4-fs (mmcblk0p2): re-mounted. Opts: (null)
+Feb 16 14:02:58 raspberrypi kernel: [   12.844824] EXT4-fs (mmcblk0p2): re-mounted. Opts: (null)
+Feb 16 14:02:58 raspberrypi kernel: [   23.203547] smsc95xx 1-1.1:1.0 eth0: hardware isn't capable of remote wakeup
+Feb 16 14:02:58 raspberrypi kernel: [   24.711915] smsc95xx 1-1.1:1.0 eth0: link up, 100Mbps, full-duplex, lpa 0x45E1
+Feb 16 14:03:01 raspberrypi kernel: [   37.298409] Adding 102396k swap on /var/swap.  Priority:-1 extents:2 across:2134012k SSFS
+Mar 20 19:05:43 raspberrypi kernel: imklog 5.8.11, log source = /proc/kmsg started.
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000] Booting Linux on physical CPU 0x0
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000] Initializing cgroup subsys cpu
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000] Initializing cgroup subsys cpuacct
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000] Linux version 3.18.7+ (dc4@dc4-XPS13-9333) (gcc version 4.8.3 20140303 (prerelease) (crosstool-NG linaro-1.13.1+bzr2650 - Linaro GCC 2014.03) ) #755 PREEMPT Thu Feb 12 17:14:31 GMT 2015
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000] CPU: ARMv6-compatible processor [410fb767] revision 7 (ARMv7), cr=00c5387d
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT nonaliasing instruction cache
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000] Machine model: Raspberry Pi Model B
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000] cma: Reserved 8 MiB at 0x1b800000
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000] Memory policy: Data cache writeback
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000] On node 0 totalpages: 114688
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000] free_area_init_node: node 0, pgdat c084d804, node_mem_map db474000
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000]   Normal zone: 896 pages used for memmap
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000]   Normal zone: 0 pages reserved
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000]   Normal zone: 114688 pages, LIFO batch:31
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000] pcpu-alloc: s0 r0 d32768 u32768 alloc=1*32768
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000] pcpu-alloc: [0] 0 
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 113792
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000] Kernel command line: dma.dmachans=0x7f35 bcm2708_fb.fbwidth=1824 bcm2708_fb.fbheight=984 bcm2708.boardrev=0xe bcm2708.serial=0xb3778f72 smsc95xx.macaddr=B8:27:EB:77:8F:72 bcm2708_fb.fbswap=1 sdhci-bcm2708.emmc_clock_freq=250000000 vc_mem.mem_base=0x1ec00000 vc_mem.mem_size=0x20000000  dwc_otg.lpm_enable=0 console=ttyAMA0,115200 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline rootwait
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000] PID hash table entries: 2048 (order: 1, 8192 bytes)
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000] Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000] Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000] Memory: 437208K/458752K available (5926K kernel code, 358K rwdata, 1876K rodata, 340K init, 734K bss, 21544K reserved)
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000] Virtual kernel memory layout:
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000]     fixmap  : 0xffc00000 - 0xffe00000   (2048 kB)
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000]     vmalloc : 0xdc800000 - 0xff000000   ( 552 MB)
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000]     lowmem  : 0xc0000000 - 0xdc000000   ( 448 MB)
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000]     modules : 0xbf000000 - 0xc0000000   (  16 MB)
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000]       .text : 0xc0008000 - 0xc07a6ad8   (7803 kB)
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000]       .init : 0xc07a7000 - 0xc07fc000   ( 340 kB)
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000]       .data : 0xc07fc000 - 0xc085588c   ( 359 kB)
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000]        .bss : 0xc085588c - 0xc090d128   ( 735 kB)
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000] Preemptible hierarchical RCU implementation.
+Mar 20 19:05:43 raspberrypi kernel: [    0.000000] NR_IRQS:522
+Mar 20 19:05:43 raspberrypi kernel: [    0.000023] sched_clock: 32 bits at 1000kHz, resolution 1000ns, wraps every 2147483648000ns
+Mar 20 19:05:43 raspberrypi kernel: [    0.000074] Switching to timer-based delay loop, resolution 1000ns
+Mar 20 19:05:43 raspberrypi kernel: [    0.000353] Console: colour dummy device 80x30
+Mar 20 19:05:43 raspberrypi kernel: [    0.001413] console [tty1] enabled
+Mar 20 19:05:43 raspberrypi kernel: [    0.001459] Calibrating delay loop (skipped), value calculated using timer frequency.. 2.00 BogoMIPS (lpj=10000)
+Mar 20 19:05:43 raspberrypi kernel: [    0.001534] pid_max: default: 32768 minimum: 301
+Mar 20 19:05:43 raspberrypi kernel: [    0.001914] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Mar 20 19:05:43 raspberrypi kernel: [    0.001979] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Mar 20 19:05:43 raspberrypi kernel: [    0.002981] Initializing cgroup subsys memory
+Mar 20 19:05:43 raspberrypi kernel: [    0.003074] Initializing cgroup subsys devices
+Mar 20 19:05:43 raspberrypi kernel: [    0.003134] Initializing cgroup subsys freezer
+Mar 20 19:05:43 raspberrypi kernel: [    0.003188] Initializing cgroup subsys net_cls
+Mar 20 19:05:43 raspberrypi kernel: [    0.003240] Initializing cgroup subsys blkio
+Mar 20 19:05:43 raspberrypi kernel: [    0.003365] CPU: Testing write buffer coherency: ok
+Mar 20 19:05:43 raspberrypi kernel: [    0.003480] ftrace: allocating 19479 entries in 58 pages
+Mar 20 19:05:43 raspberrypi kernel: [    0.111667] Setting up static identity map for 0x55d058 - 0x55d0b4
+Mar 20 19:05:43 raspberrypi kernel: [    0.114486] devtmpfs: initialized
+Mar 20 19:05:43 raspberrypi kernel: [    0.131927] VFP support v0.3: implementor 41 architecture 1 part 20 variant b rev 5
+Mar 20 19:05:43 raspberrypi kernel: [    0.135108] pinctrl core: initialized pinctrl subsystem
+Mar 20 19:05:43 raspberrypi kernel: [    0.137774] NET: Registered protocol family 16
+Mar 20 19:05:43 raspberrypi kernel: [    0.143245] DMA: preallocated 4096 KiB pool for atomic coherent allocations
+Mar 20 19:05:43 raspberrypi kernel: [    0.171448] cpuidle: using governor ladder
+Mar 20 19:05:43 raspberrypi kernel: [    0.201510] cpuidle: using governor menu
+Mar 20 19:05:43 raspberrypi kernel: [    0.202019] bcm2708.uart_clock = 3000000
+Mar 20 19:05:43 raspberrypi kernel: [    0.205502] No ATAGs?
+Mar 20 19:05:43 raspberrypi kernel: [    0.205568] hw-breakpoint: found 6 breakpoint and 1 watchpoint registers.
+Mar 20 19:05:43 raspberrypi kernel: [    0.205630] hw-breakpoint: maximum watchpoint size is 4 bytes.
+Mar 20 19:05:43 raspberrypi kernel: [    0.205698] mailbox: Broadcom VideoCore Mailbox driver
+Mar 20 19:05:43 raspberrypi kernel: [    0.205864] bcm2708_vcio: mailbox at f200b880
+Mar 20 19:05:43 raspberrypi kernel: [    0.206358] bcm_power: Broadcom power driver
+Mar 20 19:05:43 raspberrypi kernel: [    0.206413] bcm_power_open() -> 0
+Mar 20 19:05:43 raspberrypi kernel: [    0.206444] bcm_power_request(0, 8)
+Mar 20 19:05:43 raspberrypi kernel: [    0.707207] bcm_mailbox_read -> 00000080, 0
+Mar 20 19:05:43 raspberrypi kernel: [    0.707257] bcm_power_request -> 0
+Mar 20 19:05:43 raspberrypi kernel: [    0.707457] Serial: AMBA PL011 UART driver
+Mar 20 19:05:43 raspberrypi kernel: [    0.707705] dev:f1: ttyAMA0 at MMIO 0x20201000 (irq = 83, base_baud = 0) is a PL011 rev3
+Mar 20 19:05:43 raspberrypi kernel: [    1.097231] console [ttyAMA0] enabled
+Mar 20 19:05:43 raspberrypi kernel: [    1.170312] SCSI subsystem initialized
+Mar 20 19:05:43 raspberrypi kernel: [    1.174431] usbcore: registered new interface driver usbfs
+Mar 20 19:05:43 raspberrypi kernel: [    1.180225] usbcore: registered new interface driver hub
+Mar 20 19:05:43 raspberrypi kernel: [    1.185727] usbcore: registered new device driver usb
+Mar 20 19:05:43 raspberrypi kernel: [    1.192925] Switched to clocksource stc
+Mar 20 19:05:43 raspberrypi kernel: [    1.227365] FS-Cache: Loaded
+Mar 20 19:05:43 raspberrypi kernel: [    1.230712] CacheFiles: Loaded
+Mar 20 19:05:43 raspberrypi kernel: [    1.250850] NET: Registered protocol family 2
+Mar 20 19:05:43 raspberrypi kernel: [    1.256797] TCP established hash table entries: 4096 (order: 2, 16384 bytes)
+Mar 20 19:05:43 raspberrypi kernel: [    1.264207] TCP bind hash table entries: 4096 (order: 2, 16384 bytes)
+Mar 20 19:05:43 raspberrypi kernel: [    1.270766] TCP: Hash tables configured (established 4096 bind 4096)
+Mar 20 19:05:43 raspberrypi kernel: [    1.277274] TCP: reno registered
+Mar 20 19:05:43 raspberrypi kernel: [    1.280542] UDP hash table entries: 256 (order: 0, 4096 bytes)
+Mar 20 19:05:43 raspberrypi kernel: [    1.286469] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+Mar 20 19:05:43 raspberrypi kernel: [    1.293218] NET: Registered protocol family 1
+Mar 20 19:05:43 raspberrypi kernel: [    1.298228] RPC: Registered named UNIX socket transport module.
+Mar 20 19:05:43 raspberrypi kernel: [    1.304317] RPC: Registered udp transport module.
+Mar 20 19:05:43 raspberrypi kernel: [    1.309050] RPC: Registered tcp transport module.
+Mar 20 19:05:43 raspberrypi kernel: [    1.313815] RPC: Registered tcp NFSv4.1 backchannel transport module.
+Mar 20 19:05:43 raspberrypi kernel: [    1.321503] bcm2708_dma: DMA manager at f2007000
+Mar 20 19:05:43 raspberrypi kernel: [    1.326569] vc-mem: phys_addr:0x00000000 mem_base=0x1ec00000 mem_size:0x20000000(512 MiB)
+Mar 20 19:05:43 raspberrypi kernel: [    1.336445] futex hash table entries: 256 (order: -1, 3072 bytes)
+Mar 20 19:05:43 raspberrypi kernel: [    1.342714] audit: initializing netlink subsys (disabled)
+Mar 20 19:05:43 raspberrypi kernel: [    1.348439] audit: type=2000 audit(1.100:1): initialized
+Mar 20 19:05:43 raspberrypi kernel: [    1.369293] VFS: Disk quotas dquot_6.5.2
+Mar 20 19:05:43 raspberrypi kernel: [    1.373810] Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+Mar 20 19:05:43 raspberrypi kernel: [    1.383318] FS-Cache: Netfs 'nfs' registered for caching
+Mar 20 19:05:43 raspberrypi kernel: [    1.390429] NFS: Registering the id_resolver key type
+Mar 20 19:05:43 raspberrypi kernel: [    1.395755] Key type id_resolver registered
+Mar 20 19:05:43 raspberrypi kernel: [    1.399970] Key type id_legacy registered
+Mar 20 19:05:43 raspberrypi kernel: [    1.405499] msgmni has been set to 869
+Mar 20 19:05:43 raspberrypi kernel: [    1.411769] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
+Mar 20 19:05:43 raspberrypi kernel: [    1.419789] io scheduler noop registered
+Mar 20 19:05:43 raspberrypi kernel: [    1.423932] io scheduler deadline registered (default)
+Mar 20 19:05:43 raspberrypi kernel: [    1.429514] io scheduler cfq registered
+Mar 20 19:05:43 raspberrypi kernel: [    1.436063] BCM2708FB: allocated DMA memory 5bc00000
+Mar 20 19:05:43 raspberrypi kernel: [    1.441129] BCM2708FB: allocated DMA channel 0 @ f2007000
+Mar 20 19:05:43 raspberrypi kernel: [    1.471322] Console: switching to colour frame buffer device 228x61
+Mar 20 19:05:43 raspberrypi kernel: [    1.496710] bcm2708-dmaengine bcm2708-dmaengine: Load BCM2835 DMA engine driver
+Mar 20 19:05:43 raspberrypi kernel: [    1.504761] uart-pl011 dev:f1: no DMA platform data
+Mar 20 19:05:43 raspberrypi kernel: [    1.510625] vc-cma: Videocore CMA driver
+Mar 20 19:05:43 raspberrypi kernel: [    1.514837] vc-cma: vc_cma_base      = 0x00000000
+Mar 20 19:05:43 raspberrypi kernel: [    1.519662] vc-cma: vc_cma_size      = 0x00000000 (0 MiB)
+Mar 20 19:05:43 raspberrypi kernel: [    1.525287] vc-cma: vc_cma_initial   = 0x00000000 (0 MiB)
+Mar 20 19:05:43 raspberrypi kernel: [    1.545207] brd: module loaded
+Mar 20 19:05:43 raspberrypi kernel: [    1.555965] loop: module loaded
+Mar 20 19:05:43 raspberrypi kernel: [    1.559761] vchiq: vchiq_init_state: slot_zero = 0xdb800000, is_master = 0
+Mar 20 19:05:43 raspberrypi kernel: [    1.568006] Loading iSCSI transport class v2.0-870.
+Mar 20 19:05:43 raspberrypi kernel: [    1.574507] usbcore: registered new interface driver smsc95xx
+Mar 20 19:05:43 raspberrypi kernel: [    1.580524] dwc_otg: version 3.00a 10-AUG-2012 (platform bus)
+Mar 20 19:05:43 raspberrypi kernel: [    1.786848] Core Release: 2.80a
+Mar 20 19:05:43 raspberrypi kernel: [    1.790123] Setting default values for core params
+Mar 20 19:05:43 raspberrypi kernel: [    1.795177] Finished setting default values for core params
+Mar 20 19:05:43 raspberrypi kernel: [    2.001094] Using Buffer DMA mode
+Mar 20 19:05:43 raspberrypi kernel: [    2.004567] Periodic Transfer Interrupt Enhancement - disabled
+Mar 20 19:05:43 raspberrypi kernel: [    2.010537] Multiprocessor Interrupt Enhancement - disabled
+Mar 20 19:05:43 raspberrypi kernel: [    2.016279] OTG VER PARAM: 0, OTG VER FLAG: 0
+Mar 20 19:05:43 raspberrypi kernel: [    2.020752] Dedicated Tx FIFOs mode
+Mar 20 19:05:43 raspberrypi kernel: [    2.024830] WARN::dwc_otg_hcd_init:1047: FIQ DMA bounce buffers: virt = 0xdbc14000 dma = 0x5bc14000 len=9024
+Mar 20 19:05:43 raspberrypi kernel: [    2.034967] FIQ FSM acceleration enabled for :
+Mar 20 19:05:43 raspberrypi kernel: [    2.034967] Non-periodic Split Transactions
+Mar 20 19:05:43 raspberrypi kernel: [    2.034967] Periodic Split Transactions
+Mar 20 19:05:43 raspberrypi kernel: [    2.034967] High-Speed Isochronous Endpoints
+Mar 20 19:05:43 raspberrypi kernel: [    2.052131] dwc_otg: Microframe scheduler enabled
+Mar 20 19:05:43 raspberrypi kernel: [    2.052241] WARN::hcd_init_fiq:412: FIQ on core 0 at 0xc040116c
+Mar 20 19:05:43 raspberrypi kernel: [    2.063549] WARN::hcd_init_fiq:413: FIQ ASM at 0xc0401444 length 36
+Mar 20 19:05:43 raspberrypi kernel: [    2.074899] WARN::hcd_init_fiq:438: MPHI regs_base at 0xdc806000
+Mar 20 19:05:43 raspberrypi kernel: [    2.086197] dwc_otg bcm2708_usb: DWC OTG Controller
+Mar 20 19:05:43 raspberrypi kernel: [    2.096274] dwc_otg bcm2708_usb: new USB bus registered, assigned bus number 1
+Mar 20 19:05:43 raspberrypi kernel: [    2.108881] dwc_otg bcm2708_usb: irq 32, io mem 0x00000000
+Mar 20 19:05:43 raspberrypi kernel: [    2.119684] Init: Port Power? op_state=1
+Mar 20 19:05:43 raspberrypi kernel: [    2.128879] Init: Power Port (0)
+Mar 20 19:05:43 raspberrypi kernel: [    2.137844] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+Mar 20 19:05:43 raspberrypi kernel: [    2.150083] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+Mar 20 19:05:43 raspberrypi kernel: [    2.162666] usb usb1: Product: DWC OTG Controller
+Mar 20 19:05:43 raspberrypi kernel: [    2.172562] usb usb1: Manufacturer: Linux 3.18.7+ dwc_otg_hcd
+Mar 20 19:05:43 raspberrypi kernel: [    2.183593] usb usb1: SerialNumber: bcm2708_usb
+Mar 20 19:05:43 raspberrypi kernel: [    2.194445] hub 1-0:1.0: USB hub found
+Mar 20 19:05:43 raspberrypi kernel: [    2.203702] hub 1-0:1.0: 1 port detected
+Mar 20 19:05:43 raspberrypi kernel: [    2.213525] dwc_otg: FIQ enabled
+Mar 20 19:05:43 raspberrypi kernel: [    2.213553] dwc_otg: NAK holdoff enabled
+Mar 20 19:05:43 raspberrypi kernel: [    2.213566] dwc_otg: FIQ split-transaction FSM enabled
+Mar 20 19:05:43 raspberrypi kernel: [    2.213631] Module dwc_common_port init
+Mar 20 19:05:43 raspberrypi kernel: [    2.214239] usbcore: registered new interface driver usb-storage
+Mar 20 19:05:43 raspberrypi kernel: [    2.226223] mousedev: PS/2 mouse device common for all mice
+Mar 20 19:05:43 raspberrypi kernel: [    2.238064] bcm2835-cpufreq: min=700000 max=700000
+Mar 20 19:05:43 raspberrypi kernel: [    2.248758] sdhci: Secure Digital Host Controller Interface driver
+Mar 20 19:05:43 raspberrypi kernel: [    2.260285] sdhci: Copyright(c) Pierre Ossman
+Mar 20 19:05:43 raspberrypi kernel: [    2.270163] DMA channels allocated for the MMC driver
+Mar 20 19:05:43 raspberrypi kernel: [    2.313222] Load BCM2835 MMC driver
+Mar 20 19:05:43 raspberrypi kernel: [    2.327606] sdhci-pltfm: SDHCI platform and OF driver helper
+Mar 20 19:05:43 raspberrypi kernel: [    2.339244] ledtrig-cpu: registered to indicate activity on CPUs
+Mar 20 19:05:43 raspberrypi kernel: [    2.352142] hidraw: raw HID events driver (C) Jiri Kosina
+Mar 20 19:05:43 raspberrypi kernel: [    2.368709] usbcore: registered new interface driver usbhid
+Mar 20 19:05:43 raspberrypi kernel: [    2.379655] usbhid: USB HID core driver
+Mar 20 19:05:43 raspberrypi kernel: [    2.392372] TCP: cubic registered
+Mar 20 19:05:43 raspberrypi kernel: [    2.403162] Initializing XFRM netlink socket
+Mar 20 19:05:43 raspberrypi kernel: [    2.414899] Indeed it is in host mode hprt0 = 00021501
+Mar 20 19:05:43 raspberrypi kernel: [    2.425562] NET: Registered protocol family 17
+Mar 20 19:05:43 raspberrypi kernel: [    2.443281] Key type dns_resolver registered
+Mar 20 19:05:43 raspberrypi kernel: [    2.465447] registered taskstats version 1
+Mar 20 19:05:43 raspberrypi kernel: [    2.479746] mmc0: host does not support reading read-only switch, assuming write-enable
+Mar 20 19:05:43 raspberrypi kernel: [    2.503373] vc-sm: Videocore shared memory driver
+Mar 20 19:05:43 raspberrypi kernel: [    2.523112] [vc_sm_connected_init]: start
+Mar 20 19:05:43 raspberrypi kernel: [    2.532633] mmc0: new high speed SDHC card at address 0002
+Mar 20 19:05:43 raspberrypi kernel: [    2.554102] [vc_sm_connected_init]: end - returning 0
+Mar 20 19:05:43 raspberrypi kernel: [    2.573072] mmcblk0: mmc0:0002 00000 7.41 GiB 
+Mar 20 19:05:43 raspberrypi kernel: [    2.587346]  mmcblk0: p1 p2
+Mar 20 19:05:43 raspberrypi kernel: [    2.616932] EXT4-fs (mmcblk0p2): mounted filesystem with ordered data mode. Opts: (null)
+Mar 20 19:05:43 raspberrypi kernel: [    2.630955] VFS: Mounted root (ext4 filesystem) readonly on device 179:2.
+Mar 20 19:05:43 raspberrypi kernel: [    2.645193] devtmpfs: mounted
+Mar 20 19:05:43 raspberrypi kernel: [    2.654788] Freeing unused kernel memory: 340K (c07a7000 - c07fc000)
+Mar 20 19:05:43 raspberrypi kernel: [    2.703199] usb 1-1: new high-speed USB device number 2 using dwc_otg
+Mar 20 19:05:43 raspberrypi kernel: [    2.716468] Indeed it is in host mode hprt0 = 00001101
+Mar 20 19:05:43 raspberrypi kernel: [    2.933499] usb 1-1: New USB device found, idVendor=0424, idProduct=9512
+Mar 20 19:05:43 raspberrypi kernel: [    2.947144] usb 1-1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+Mar 20 19:05:43 raspberrypi kernel: [    2.962173] hub 1-1:1.0: USB hub found
+Mar 20 19:05:43 raspberrypi kernel: [    2.973269] hub 1-1:1.0: 3 ports detected
+Mar 20 19:05:43 raspberrypi kernel: [    3.263305] usb 1-1.1: new high-speed USB device number 3 using dwc_otg
+Mar 20 19:05:43 raspberrypi kernel: [    3.383579] usb 1-1.1: New USB device found, idVendor=0424, idProduct=ec00
+Mar 20 19:05:43 raspberrypi kernel: [    3.403162] usb 1-1.1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+Mar 20 19:05:43 raspberrypi kernel: [    3.424855] smsc95xx v1.0.4
+Mar 20 19:05:43 raspberrypi kernel: [    3.503435] smsc95xx 1-1.1:1.0 eth0: register 'smsc95xx' at usb-bcm2708_usb-1.1, smsc95xx USB 2.0 Ethernet, b8:27:eb:77:8f:72
+Mar 20 19:05:43 raspberrypi kernel: [    3.633338] usb 1-1.2: new full-speed USB device number 4 using dwc_otg
+Mar 20 19:05:43 raspberrypi kernel: [    3.789853] usb 1-1.2: New USB device found, idVendor=046d, idProduct=c52b
+Mar 20 19:05:43 raspberrypi kernel: [    3.803530] usb 1-1.2: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+Mar 20 19:05:43 raspberrypi kernel: [    3.819386] usb 1-1.2: Product: USB Receiver
+Mar 20 19:05:43 raspberrypi kernel: [    3.831762] usb 1-1.2: Manufacturer: Logitech
+Mar 20 19:05:43 raspberrypi kernel: [    3.870751] input: Logitech USB Receiver as /devices/platform/bcm2708_usb/usb1/1-1/1-1.2/1-1.2:1.0/0003:046D:C52B.0001/input/input0
+Mar 20 19:05:43 raspberrypi kernel: [    3.892672] hid-generic 0003:046D:C52B.0001: input,hidraw0: USB HID v1.11 Keyboard [Logitech USB Receiver] on usb-bcm2708_usb-1.2/input0
+Mar 20 19:05:43 raspberrypi kernel: [    3.942184] input: Logitech USB Receiver as /devices/platform/bcm2708_usb/usb1/1-1/1-1.2/1-1.2:1.1/0003:046D:C52B.0002/input/input1
+Mar 20 19:05:43 raspberrypi kernel: [    3.994613] hid-generic 0003:046D:C52B.0002: input,hiddev0,hidraw1: USB HID v1.11 Mouse [Logitech USB Receiver] on usb-bcm2708_usb-1.2/input1
+Mar 20 19:05:43 raspberrypi kernel: [    4.056372] hid-generic 0003:046D:C52B.0003: hiddev0,hidraw2: USB HID v1.11 Device [Logitech USB Receiver] on usb-bcm2708_usb-1.2/input2
+Mar 20 19:05:43 raspberrypi kernel: [    4.173246] usb 1-1.3: new high-speed USB device number 5 using dwc_otg
+Mar 20 19:05:43 raspberrypi kernel: [    4.303921] usb 1-1.3: New USB device found, idVendor=1a40, idProduct=0101
+Mar 20 19:05:43 raspberrypi kernel: [    4.333142] usb 1-1.3: New USB device strings: Mfr=0, Product=1, SerialNumber=0
+Mar 20 19:05:43 raspberrypi kernel: [    4.360895] usb 1-1.3: Product: USB 2.0 Hub
+Mar 20 19:05:43 raspberrypi kernel: [    4.384054] hub 1-1.3:1.0: USB hub found
+Mar 20 19:05:43 raspberrypi kernel: [    4.403390] hub 1-1.3:1.0: 4 ports detected
+Mar 20 19:05:43 raspberrypi kernel: [    6.784130] bcm2708_spi 20204000.spi: master is unqueued, this is deprecated
+Mar 20 19:05:43 raspberrypi kernel: [    7.163369] bcm2708_spi 20204000.spi: SPI Controller at 0x20204000 (irq 80)
+Mar 20 19:05:43 raspberrypi kernel: [    7.472832] bcm2708_i2c_init_pinmode(1,2)
+Mar 20 19:05:43 raspberrypi kernel: [    7.721807] bcm2708_i2c_init_pinmode(1,3)
+Mar 20 19:05:43 raspberrypi kernel: [    7.903074] random: nonblocking pool is initialized
+Mar 20 19:05:43 raspberrypi kernel: [    7.978316] bcm2708_i2c 20804000.i2c: BSC1 Controller at 0x20804000 (irq 79) (baudrate 100000)
+Mar 20 19:05:43 raspberrypi kernel: [   11.837280] EXT4-fs (mmcblk0p2): re-mounted. Opts: (null)
+Mar 20 19:05:43 raspberrypi kernel: [   12.300449] EXT4-fs (mmcblk0p2): re-mounted. Opts: (null)
+Mar 20 19:05:43 raspberrypi kernel: [   22.409851] EXT4-fs (mmcblk0p2): resizing filesystem from 784640 to 1929216 blocks
+Mar 20 19:05:43 raspberrypi kernel: [   23.490746] EXT4-fs (mmcblk0p2): resized filesystem to 1929216
+Mar 20 19:05:43 raspberrypi kernel: [   27.368644] smsc95xx 1-1.1:1.0 eth0: hardware isn't capable of remote wakeup
+Mar 20 19:05:43 raspberrypi kernel: [   29.020618] smsc95xx 1-1.1:1.0 eth0: link up, 100Mbps, full-duplex, lpa 0x45E1
+Mar 20 19:05:45 raspberrypi kernel: [   35.628935] Adding 102396k swap on /var/swap.  Priority:-1 extents:2 across:2134012k SSFS
+Mar 20 19:07:11 garage kernel: imklog 5.8.11, log source = /proc/kmsg started.
+Mar 20 19:07:11 garage kernel: [    0.000000] Booting Linux on physical CPU 0x0
+Mar 20 19:07:11 garage kernel: [    0.000000] Initializing cgroup subsys cpu
+Mar 20 19:07:11 garage kernel: [    0.000000] Initializing cgroup subsys cpuacct
+Mar 20 19:07:11 garage kernel: [    0.000000] Linux version 3.18.7+ (dc4@dc4-XPS13-9333) (gcc version 4.8.3 20140303 (prerelease) (crosstool-NG linaro-1.13.1+bzr2650 - Linaro GCC 2014.03) ) #755 PREEMPT Thu Feb 12 17:14:31 GMT 2015
+Mar 20 19:07:11 garage kernel: [    0.000000] CPU: ARMv6-compatible processor [410fb767] revision 7 (ARMv7), cr=00c5387d
+Mar 20 19:07:11 garage kernel: [    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT nonaliasing instruction cache
+Mar 20 19:07:11 garage kernel: [    0.000000] Machine model: Raspberry Pi Model B
+Mar 20 19:07:11 garage kernel: [    0.000000] cma: Reserved 8 MiB at 0x1b800000
+Mar 20 19:07:11 garage kernel: [    0.000000] Memory policy: Data cache writeback
+Mar 20 19:07:11 garage kernel: [    0.000000] On node 0 totalpages: 114688
+Mar 20 19:07:11 garage kernel: [    0.000000] free_area_init_node: node 0, pgdat c084d804, node_mem_map db474000
+Mar 20 19:07:11 garage kernel: [    0.000000]   Normal zone: 896 pages used for memmap
+Mar 20 19:07:11 garage kernel: [    0.000000]   Normal zone: 0 pages reserved
+Mar 20 19:07:11 garage kernel: [    0.000000]   Normal zone: 114688 pages, LIFO batch:31
+Mar 20 19:07:11 garage kernel: [    0.000000] pcpu-alloc: s0 r0 d32768 u32768 alloc=1*32768
+Mar 20 19:07:11 garage kernel: [    0.000000] pcpu-alloc: [0] 0 
+Mar 20 19:07:11 garage kernel: [    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 113792
+Mar 20 19:07:11 garage kernel: [    0.000000] Kernel command line: dma.dmachans=0x7f35 bcm2708_fb.fbwidth=1824 bcm2708_fb.fbheight=984 bcm2708.boardrev=0xe bcm2708.serial=0xb3778f72 smsc95xx.macaddr=B8:27:EB:77:8F:72 bcm2708_fb.fbswap=1 sdhci-bcm2708.emmc_clock_freq=250000000 vc_mem.mem_base=0x1ec00000 vc_mem.mem_size=0x20000000  dwc_otg.lpm_enable=0 console=ttyAMA0,115200 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline rootwait
+Mar 20 19:07:11 garage kernel: [    0.000000] PID hash table entries: 2048 (order: 1, 8192 bytes)
+Mar 20 19:07:11 garage kernel: [    0.000000] Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
+Mar 20 19:07:11 garage kernel: [    0.000000] Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
+Mar 20 19:07:11 garage kernel: [    0.000000] Memory: 437208K/458752K available (5926K kernel code, 358K rwdata, 1876K rodata, 340K init, 734K bss, 21544K reserved)
+Mar 20 19:07:11 garage kernel: [    0.000000] Virtual kernel memory layout:
+Mar 20 19:07:11 garage kernel: [    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+Mar 20 19:07:11 garage kernel: [    0.000000]     fixmap  : 0xffc00000 - 0xffe00000   (2048 kB)
+Mar 20 19:07:11 garage kernel: [    0.000000]     vmalloc : 0xdc800000 - 0xff000000   ( 552 MB)
+Mar 20 19:07:11 garage kernel: [    0.000000]     lowmem  : 0xc0000000 - 0xdc000000   ( 448 MB)
+Mar 20 19:07:11 garage kernel: [    0.000000]     modules : 0xbf000000 - 0xc0000000   (  16 MB)
+Mar 20 19:07:11 garage kernel: [    0.000000]       .text : 0xc0008000 - 0xc07a6ad8   (7803 kB)
+Mar 20 19:07:11 garage kernel: [    0.000000]       .init : 0xc07a7000 - 0xc07fc000   ( 340 kB)
+Mar 20 19:07:11 garage kernel: [    0.000000]       .data : 0xc07fc000 - 0xc085588c   ( 359 kB)
+Mar 20 19:07:11 garage kernel: [    0.000000]        .bss : 0xc085588c - 0xc090d128   ( 735 kB)
+Mar 20 19:07:11 garage kernel: [    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+Mar 20 19:07:11 garage kernel: [    0.000000] Preemptible hierarchical RCU implementation.
+Mar 20 19:07:11 garage kernel: [    0.000000] NR_IRQS:522
+Mar 20 19:07:11 garage kernel: [    0.000024] sched_clock: 32 bits at 1000kHz, resolution 1000ns, wraps every 2147483648000ns
+Mar 20 19:07:11 garage kernel: [    0.000076] Switching to timer-based delay loop, resolution 1000ns
+Mar 20 19:07:11 garage kernel: [    0.000353] Console: colour dummy device 80x30
+Mar 20 19:07:11 garage kernel: [    0.001415] console [tty1] enabled
+Mar 20 19:07:11 garage kernel: [    0.001462] Calibrating delay loop (skipped), value calculated using timer frequency.. 2.00 BogoMIPS (lpj=10000)
+Mar 20 19:07:11 garage kernel: [    0.001538] pid_max: default: 32768 minimum: 301
+Mar 20 19:07:11 garage kernel: [    0.001916] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Mar 20 19:07:11 garage kernel: [    0.001982] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Mar 20 19:07:11 garage kernel: [    0.002992] Initializing cgroup subsys memory
+Mar 20 19:07:11 garage kernel: [    0.003085] Initializing cgroup subsys devices
+Mar 20 19:07:11 garage kernel: [    0.003142] Initializing cgroup subsys freezer
+Mar 20 19:07:11 garage kernel: [    0.003196] Initializing cgroup subsys net_cls
+Mar 20 19:07:11 garage kernel: [    0.003247] Initializing cgroup subsys blkio
+Mar 20 19:07:11 garage kernel: [    0.003371] CPU: Testing write buffer coherency: ok
+Mar 20 19:07:11 garage kernel: [    0.003483] ftrace: allocating 19479 entries in 58 pages
+Mar 20 19:07:11 garage kernel: [    0.111652] Setting up static identity map for 0x55d058 - 0x55d0b4
+Mar 20 19:07:11 garage kernel: [    0.114467] devtmpfs: initialized
+Mar 20 19:07:11 garage kernel: [    0.131896] VFP support v0.3: implementor 41 architecture 1 part 20 variant b rev 5
+Mar 20 19:07:11 garage kernel: [    0.135078] pinctrl core: initialized pinctrl subsystem
+Mar 20 19:07:11 garage kernel: [    0.137739] NET: Registered protocol family 16
+Mar 20 19:07:11 garage kernel: [    0.143210] DMA: preallocated 4096 KiB pool for atomic coherent allocations
+Mar 20 19:07:11 garage kernel: [    0.171424] cpuidle: using governor ladder
+Mar 20 19:07:11 garage kernel: [    0.201487] cpuidle: using governor menu
+Mar 20 19:07:11 garage kernel: [    0.201997] bcm2708.uart_clock = 3000000
+Mar 20 19:07:11 garage kernel: [    0.205472] No ATAGs?
+Mar 20 19:07:11 garage kernel: [    0.205539] hw-breakpoint: found 6 breakpoint and 1 watchpoint registers.
+Mar 20 19:07:11 garage kernel: [    0.205601] hw-breakpoint: maximum watchpoint size is 4 bytes.
+Mar 20 19:07:11 garage kernel: [    0.205669] mailbox: Broadcom VideoCore Mailbox driver
+Mar 20 19:07:11 garage kernel: [    0.205835] bcm2708_vcio: mailbox at f200b880
+Mar 20 19:07:11 garage kernel: [    0.206327] bcm_power: Broadcom power driver
+Mar 20 19:07:11 garage kernel: [    0.206385] bcm_power_open() -> 0
+Mar 20 19:07:11 garage kernel: [    0.206415] bcm_power_request(0, 8)
+Mar 20 19:07:11 garage kernel: [    0.707175] bcm_mailbox_read -> 00000080, 0
+Mar 20 19:07:11 garage kernel: [    0.707224] bcm_power_request -> 0
+Mar 20 19:07:11 garage kernel: [    0.707426] Serial: AMBA PL011 UART driver
+Mar 20 19:07:11 garage kernel: [    0.707675] dev:f1: ttyAMA0 at MMIO 0x20201000 (irq = 83, base_baud = 0) is a PL011 rev3
+Mar 20 19:07:11 garage kernel: [    1.097190] console [ttyAMA0] enabled
+Mar 20 19:07:11 garage kernel: [    1.170271] SCSI subsystem initialized
+Mar 20 19:07:11 garage kernel: [    1.174393] usbcore: registered new interface driver usbfs
+Mar 20 19:07:11 garage kernel: [    1.180191] usbcore: registered new interface driver hub
+Mar 20 19:07:11 garage kernel: [    1.185693] usbcore: registered new device driver usb
+Mar 20 19:07:11 garage kernel: [    1.192883] Switched to clocksource stc
+Mar 20 19:07:11 garage kernel: [    1.227315] FS-Cache: Loaded
+Mar 20 19:07:11 garage kernel: [    1.230663] CacheFiles: Loaded
+Mar 20 19:07:11 garage kernel: [    1.250800] NET: Registered protocol family 2
+Mar 20 19:07:11 garage kernel: [    1.256748] TCP established hash table entries: 4096 (order: 2, 16384 bytes)
+Mar 20 19:07:11 garage kernel: [    1.264161] TCP bind hash table entries: 4096 (order: 2, 16384 bytes)
+Mar 20 19:07:11 garage kernel: [    1.270720] TCP: Hash tables configured (established 4096 bind 4096)
+Mar 20 19:07:11 garage kernel: [    1.277231] TCP: reno registered
+Mar 20 19:07:11 garage kernel: [    1.280499] UDP hash table entries: 256 (order: 0, 4096 bytes)
+Mar 20 19:07:11 garage kernel: [    1.286422] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+Mar 20 19:07:11 garage kernel: [    1.293167] NET: Registered protocol family 1
+Mar 20 19:07:11 garage kernel: [    1.298181] RPC: Registered named UNIX socket transport module.
+Mar 20 19:07:11 garage kernel: [    1.304273] RPC: Registered udp transport module.
+Mar 20 19:07:11 garage kernel: [    1.309003] RPC: Registered tcp transport module.
+Mar 20 19:07:11 garage kernel: [    1.313768] RPC: Registered tcp NFSv4.1 backchannel transport module.
+Mar 20 19:07:11 garage kernel: [    1.321456] bcm2708_dma: DMA manager at f2007000
+Mar 20 19:07:11 garage kernel: [    1.326521] vc-mem: phys_addr:0x00000000 mem_base=0x1ec00000 mem_size:0x20000000(512 MiB)
+Mar 20 19:07:11 garage kernel: [    1.336390] futex hash table entries: 256 (order: -1, 3072 bytes)
+Mar 20 19:07:11 garage kernel: [    1.342661] audit: initializing netlink subsys (disabled)
+Mar 20 19:07:11 garage kernel: [    1.348388] audit: type=2000 audit(1.100:1): initialized
+Mar 20 19:07:11 garage kernel: [    1.369253] VFS: Disk quotas dquot_6.5.2
+Mar 20 19:07:11 garage kernel: [    1.373772] Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+Mar 20 19:07:11 garage kernel: [    1.383276] FS-Cache: Netfs 'nfs' registered for caching
+Mar 20 19:07:11 garage kernel: [    1.390384] NFS: Registering the id_resolver key type
+Mar 20 19:07:11 garage kernel: [    1.395716] Key type id_resolver registered
+Mar 20 19:07:11 garage kernel: [    1.399931] Key type id_legacy registered
+Mar 20 19:07:11 garage kernel: [    1.405455] msgmni has been set to 869
+Mar 20 19:07:11 garage kernel: [    1.411729] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
+Mar 20 19:07:11 garage kernel: [    1.419746] io scheduler noop registered
+Mar 20 19:07:11 garage kernel: [    1.423892] io scheduler deadline registered (default)
+Mar 20 19:07:11 garage kernel: [    1.429470] io scheduler cfq registered
+Mar 20 19:07:11 garage kernel: [    1.436026] BCM2708FB: allocated DMA memory 5bc00000
+Mar 20 19:07:11 garage kernel: [    1.441092] BCM2708FB: allocated DMA channel 0 @ f2007000
+Mar 20 19:07:11 garage kernel: [    1.471305] Console: switching to colour frame buffer device 228x61
+Mar 20 19:07:11 garage kernel: [    1.496680] bcm2708-dmaengine bcm2708-dmaengine: Load BCM2835 DMA engine driver
+Mar 20 19:07:11 garage kernel: [    1.504733] uart-pl011 dev:f1: no DMA platform data
+Mar 20 19:07:11 garage kernel: [    1.510599] vc-cma: Videocore CMA driver
+Mar 20 19:07:11 garage kernel: [    1.514812] vc-cma: vc_cma_base      = 0x00000000
+Mar 20 19:07:11 garage kernel: [    1.519637] vc-cma: vc_cma_size      = 0x00000000 (0 MiB)
+Mar 20 19:07:11 garage kernel: [    1.525260] vc-cma: vc_cma_initial   = 0x00000000 (0 MiB)
+Mar 20 19:07:11 garage kernel: [    1.545194] brd: module loaded
+Mar 20 19:07:11 garage kernel: [    1.555969] loop: module loaded
+Mar 20 19:07:11 garage kernel: [    1.559770] vchiq: vchiq_init_state: slot_zero = 0xdb800000, is_master = 0
+Mar 20 19:07:11 garage kernel: [    1.568017] Loading iSCSI transport class v2.0-870.
+Mar 20 19:07:11 garage kernel: [    1.574521] usbcore: registered new interface driver smsc95xx
+Mar 20 19:07:11 garage kernel: [    1.580540] dwc_otg: version 3.00a 10-AUG-2012 (platform bus)
+Mar 20 19:07:11 garage kernel: [    1.786866] Core Release: 2.80a
+Mar 20 19:07:11 garage kernel: [    1.790139] Setting default values for core params
+Mar 20 19:07:11 garage kernel: [    1.795197] Finished setting default values for core params
+Mar 20 19:07:11 garage kernel: [    2.001117] Using Buffer DMA mode
+Mar 20 19:07:11 garage kernel: [    2.004587] Periodic Transfer Interrupt Enhancement - disabled
+Mar 20 19:07:11 garage kernel: [    2.010557] Multiprocessor Interrupt Enhancement - disabled
+Mar 20 19:07:11 garage kernel: [    2.016299] OTG VER PARAM: 0, OTG VER FLAG: 0
+Mar 20 19:07:11 garage kernel: [    2.020772] Dedicated Tx FIFOs mode
+Mar 20 19:07:11 garage kernel: [    2.024853] WARN::dwc_otg_hcd_init:1047: FIQ DMA bounce buffers: virt = 0xdbc14000 dma = 0x5bc14000 len=9024
+Mar 20 19:07:11 garage kernel: [    2.034989] FIQ FSM acceleration enabled for :
+Mar 20 19:07:11 garage kernel: [    2.034989] Non-periodic Split Transactions
+Mar 20 19:07:11 garage kernel: [    2.034989] Periodic Split Transactions
+Mar 20 19:07:11 garage kernel: [    2.034989] High-Speed Isochronous Endpoints
+Mar 20 19:07:11 garage kernel: [    2.052159] dwc_otg: Microframe scheduler enabled
+Mar 20 19:07:11 garage kernel: [    2.052269] WARN::hcd_init_fiq:412: FIQ on core 0 at 0xc040116c
+Mar 20 19:07:11 garage kernel: [    2.063575] WARN::hcd_init_fiq:413: FIQ ASM at 0xc0401444 length 36
+Mar 20 19:07:11 garage kernel: [    2.074920] WARN::hcd_init_fiq:438: MPHI regs_base at 0xdc806000
+Mar 20 19:07:11 garage kernel: [    2.086218] dwc_otg bcm2708_usb: DWC OTG Controller
+Mar 20 19:07:11 garage kernel: [    2.096282] dwc_otg bcm2708_usb: new USB bus registered, assigned bus number 1
+Mar 20 19:07:11 garage kernel: [    2.108878] dwc_otg bcm2708_usb: irq 32, io mem 0x00000000
+Mar 20 19:07:11 garage kernel: [    2.119680] Init: Port Power? op_state=1
+Mar 20 19:07:11 garage kernel: [    2.128852] Init: Power Port (0)
+Mar 20 19:07:11 garage kernel: [    2.137814] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+Mar 20 19:07:11 garage kernel: [    2.150040] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+Mar 20 19:07:11 garage kernel: [    2.162617] usb usb1: Product: DWC OTG Controller
+Mar 20 19:07:11 garage kernel: [    2.172501] usb usb1: Manufacturer: Linux 3.18.7+ dwc_otg_hcd
+Mar 20 19:07:11 garage kernel: [    2.183532] usb usb1: SerialNumber: bcm2708_usb
+Mar 20 19:07:11 garage kernel: [    2.194367] hub 1-0:1.0: USB hub found
+Mar 20 19:07:11 garage kernel: [    2.203617] hub 1-0:1.0: 1 port detected
+Mar 20 19:07:11 garage kernel: [    2.213443] dwc_otg: FIQ enabled
+Mar 20 19:07:11 garage kernel: [    2.213472] dwc_otg: NAK holdoff enabled
+Mar 20 19:07:11 garage kernel: [    2.213486] dwc_otg: FIQ split-transaction FSM enabled
+Mar 20 19:07:11 garage kernel: [    2.213549] Module dwc_common_port init
+Mar 20 19:07:11 garage kernel: [    2.214150] usbcore: registered new interface driver usb-storage
+Mar 20 19:07:11 garage kernel: [    2.226119] mousedev: PS/2 mouse device common for all mice
+Mar 20 19:07:11 garage kernel: [    2.237952] bcm2835-cpufreq: min=700000 max=700000
+Mar 20 19:07:11 garage kernel: [    2.248643] sdhci: Secure Digital Host Controller Interface driver
+Mar 20 19:07:11 garage kernel: [    2.260175] sdhci: Copyright(c) Pierre Ossman
+Mar 20 19:07:11 garage kernel: [    2.270040] DMA channels allocated for the MMC driver
+Mar 20 19:07:11 garage kernel: [    2.312968] Load BCM2835 MMC driver
+Mar 20 19:07:11 garage kernel: [    2.327361] sdhci-pltfm: SDHCI platform and OF driver helper
+Mar 20 19:07:11 garage kernel: [    2.338986] ledtrig-cpu: registered to indicate activity on CPUs
+Mar 20 19:07:11 garage kernel: [    2.352939] hidraw: raw HID events driver (C) Jiri Kosina
+Mar 20 19:07:11 garage kernel: [    2.368474] usbcore: registered new interface driver usbhid
+Mar 20 19:07:11 garage kernel: [    2.379411] usbhid: USB HID core driver
+Mar 20 19:07:11 garage kernel: [    2.393211] TCP: cubic registered
+Mar 20 19:07:11 garage kernel: [    2.404114] Indeed it is in host mode hprt0 = 00021501
+Mar 20 19:07:11 garage kernel: [    2.416570] Initializing XFRM netlink socket
+Mar 20 19:07:11 garage kernel: [    2.427728] NET: Registered protocol family 17
+Mar 20 19:07:11 garage kernel: [    2.453185] Key type dns_resolver registered
+Mar 20 19:07:11 garage kernel: [    2.470459] mmc0: host does not support reading read-only switch, assuming write-enable
+Mar 20 19:07:11 garage kernel: [    2.493984] registered taskstats version 1
+Mar 20 19:07:11 garage kernel: [    2.513416] vc-sm: Videocore shared memory driver
+Mar 20 19:07:11 garage kernel: [    2.523927] mmc0: new high speed SDHC card at address 0002
+Mar 20 19:07:11 garage kernel: [    2.542982] [vc_sm_connected_init]: start
+Mar 20 19:07:11 garage kernel: [    2.562299] mmcblk0: mmc0:0002 00000 7.41 GiB 
+Mar 20 19:07:11 garage kernel: [    2.574185] [vc_sm_connected_init]: end - returning 0
+Mar 20 19:07:11 garage kernel: [    2.587760]  mmcblk0: p1 p2
+Mar 20 19:07:11 garage kernel: [    2.618566] EXT4-fs (mmcblk0p2): mounted filesystem with ordered data mode. Opts: (null)
+Mar 20 19:07:11 garage kernel: [    2.632722] VFS: Mounted root (ext4 filesystem) readonly on device 179:2.
+Mar 20 19:07:11 garage kernel: [    2.646888] devtmpfs: mounted
+Mar 20 19:07:11 garage kernel: [    2.656538] Freeing unused kernel memory: 340K (c07a7000 - c07fc000)
+Mar 20 19:07:11 garage kernel: [    2.683172] usb 1-1: new high-speed USB device number 2 using dwc_otg
+Mar 20 19:07:11 garage kernel: [    2.696293] Indeed it is in host mode hprt0 = 00001101
+Mar 20 19:07:11 garage kernel: [    2.913571] usb 1-1: New USB device found, idVendor=0424, idProduct=9512
+Mar 20 19:07:11 garage kernel: [    2.926114] usb 1-1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+Mar 20 19:07:11 garage kernel: [    2.940477] hub 1-1:1.0: USB hub found
+Mar 20 19:07:11 garage kernel: [    2.951128] hub 1-1:1.0: 3 ports detected
+Mar 20 19:07:11 garage kernel: [    3.243299] usb 1-1.1: new high-speed USB device number 3 using dwc_otg
+Mar 20 19:07:11 garage kernel: [    3.373661] usb 1-1.1: New USB device found, idVendor=0424, idProduct=ec00
+Mar 20 19:07:11 garage kernel: [    3.392420] usb 1-1.1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+Mar 20 19:07:11 garage kernel: [    3.411338] smsc95xx v1.0.4
+Mar 20 19:07:11 garage kernel: [    3.492004] smsc95xx 1-1.1:1.0 eth0: register 'smsc95xx' at usb-bcm2708_usb-1.1, smsc95xx USB 2.0 Ethernet, b8:27:eb:77:8f:72
+Mar 20 19:07:11 garage kernel: [    3.603243] usb 1-1.2: new full-speed USB device number 4 using dwc_otg
+Mar 20 19:07:11 garage kernel: [    3.761225] usb 1-1.2: New USB device found, idVendor=046d, idProduct=c52b
+Mar 20 19:07:11 garage kernel: [    3.776933] usb 1-1.2: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+Mar 20 19:07:11 garage kernel: [    3.790880] usb 1-1.2: Product: USB Receiver
+Mar 20 19:07:11 garage kernel: [    3.802103] usb 1-1.2: Manufacturer: Logitech
+Mar 20 19:07:11 garage kernel: [    3.836450] input: Logitech USB Receiver as /devices/platform/bcm2708_usb/usb1/1-1/1-1.2/1-1.2:1.0/0003:046D:C52B.0001/input/input0
+Mar 20 19:07:11 garage kernel: [    3.861225] hid-generic 0003:046D:C52B.0001: input,hidraw0: USB HID v1.11 Keyboard [Logitech USB Receiver] on usb-bcm2708_usb-1.2/input0
+Mar 20 19:07:11 garage kernel: [    3.912517] input: Logitech USB Receiver as /devices/platform/bcm2708_usb/usb1/1-1/1-1.2/1-1.2:1.1/0003:046D:C52B.0002/input/input1
+Mar 20 19:07:11 garage kernel: [    3.940542] hid-generic 0003:046D:C52B.0002: input,hiddev0,hidraw1: USB HID v1.11 Mouse [Logitech USB Receiver] on usb-bcm2708_usb-1.2/input1
+Mar 20 19:07:11 garage kernel: [    4.014774] hid-generic 0003:046D:C52B.0003: hiddev0,hidraw2: USB HID v1.11 Device [Logitech USB Receiver] on usb-bcm2708_usb-1.2/input2
+Mar 20 19:07:11 garage kernel: [    4.143290] usb 1-1.3: new high-speed USB device number 5 using dwc_otg
+Mar 20 19:07:11 garage kernel: [    4.283882] usb 1-1.3: New USB device found, idVendor=1a40, idProduct=0101
+Mar 20 19:07:11 garage kernel: [    4.309813] usb 1-1.3: New USB device strings: Mfr=0, Product=1, SerialNumber=0
+Mar 20 19:07:11 garage kernel: [    4.339439] usb 1-1.3: Product: USB 2.0 Hub
+Mar 20 19:07:11 garage kernel: [    4.362597] hub 1-1.3:1.0: USB hub found
+Mar 20 19:07:11 garage kernel: [    4.383384] hub 1-1.3:1.0: 4 ports detected
+Mar 20 19:07:11 garage kernel: [    6.762676] bcm2708_i2c_init_pinmode(1,2)
+Mar 20 19:07:11 garage kernel: [    6.999711] bcm2708_i2c_init_pinmode(1,3)
+Mar 20 19:07:11 garage kernel: [    7.249571] bcm2708_i2c 20804000.i2c: BSC1 Controller at 0x20804000 (irq 79) (baudrate 100000)
+Mar 20 19:07:11 garage kernel: [    7.668206] bcm2708_spi 20204000.spi: master is unqueued, this is deprecated
+Mar 20 19:07:11 garage kernel: [    7.997884] bcm2708_spi 20204000.spi: SPI Controller at 0x20204000 (irq 80)
+Mar 20 19:07:11 garage kernel: [    8.052596] random: nonblocking pool is initialized
+Mar 20 19:07:11 garage kernel: [   11.789440] EXT4-fs (mmcblk0p2): re-mounted. Opts: (null)
+Mar 20 19:07:11 garage kernel: [   12.309114] EXT4-fs (mmcblk0p2): re-mounted. Opts: (null)
+Mar 20 19:07:11 garage kernel: [   23.459681] smsc95xx 1-1.1:1.0 eth0: hardware isn't capable of remote wakeup
+Mar 20 19:07:11 garage kernel: [   24.968611] smsc95xx 1-1.1:1.0 eth0: link up, 100Mbps, full-duplex, lpa 0x45E1
+Mar 20 19:07:13 garage kernel: [   31.969219] Adding 102396k swap on /var/swap.  Priority:-1 extents:2 across:2134012k SSFS
+Mar 20 20:32:15 garage kernel: imklog 5.8.11, log source = /proc/kmsg started.
+Mar 20 20:32:15 garage kernel: [    0.000000] Booting Linux on physical CPU 0x0
+Mar 20 20:32:15 garage kernel: [    0.000000] Initializing cgroup subsys cpu
+Mar 20 20:32:15 garage kernel: [    0.000000] Initializing cgroup subsys cpuacct
+Mar 20 20:32:15 garage kernel: [    0.000000] Linux version 3.18.7+ (dc4@dc4-XPS13-9333) (gcc version 4.8.3 20140303 (prerelease) (crosstool-NG linaro-1.13.1+bzr2650 - Linaro GCC 2014.03) ) #755 PREEMPT Thu Feb 12 17:14:31 GMT 2015
+Mar 20 20:32:15 garage kernel: [    0.000000] CPU: ARMv6-compatible processor [410fb767] revision 7 (ARMv7), cr=00c5387d
+Mar 20 20:32:15 garage kernel: [    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT nonaliasing instruction cache
+Mar 20 20:32:15 garage kernel: [    0.000000] Machine model: Raspberry Pi Model B
+Mar 20 20:32:15 garage kernel: [    0.000000] cma: Reserved 8 MiB at 0x1b800000
+Mar 20 20:32:15 garage kernel: [    0.000000] Memory policy: Data cache writeback
+Mar 20 20:32:15 garage kernel: [    0.000000] On node 0 totalpages: 114688
+Mar 20 20:32:15 garage kernel: [    0.000000] free_area_init_node: node 0, pgdat c084d804, node_mem_map db474000
+Mar 20 20:32:15 garage kernel: [    0.000000]   Normal zone: 896 pages used for memmap
+Mar 20 20:32:15 garage kernel: [    0.000000]   Normal zone: 0 pages reserved
+Mar 20 20:32:15 garage kernel: [    0.000000]   Normal zone: 114688 pages, LIFO batch:31
+Mar 20 20:32:15 garage kernel: [    0.000000] pcpu-alloc: s0 r0 d32768 u32768 alloc=1*32768
+Mar 20 20:32:15 garage kernel: [    0.000000] pcpu-alloc: [0] 0 
+Mar 20 20:32:15 garage kernel: [    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 113792
+Mar 20 20:32:15 garage kernel: [    0.000000] Kernel command line: dma.dmachans=0x7f35 bcm2708_fb.fbwidth=656 bcm2708_fb.fbheight=416 bcm2708.boardrev=0xe bcm2708.serial=0x6abc4b4a smsc95xx.macaddr=B8:27:EB:BC:4B:4A bcm2708_fb.fbswap=1 sdhci-bcm2708.emmc_clock_freq=250000000 vc_mem.mem_base=0x1ec00000 vc_mem.mem_size=0x20000000  dwc_otg.lpm_enable=0 console=ttyAMA0,115200 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline rootwait
+Mar 20 20:32:15 garage kernel: [    0.000000] PID hash table entries: 2048 (order: 1, 8192 bytes)
+Mar 20 20:32:15 garage kernel: [    0.000000] Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
+Mar 20 20:32:15 garage kernel: [    0.000000] Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
+Mar 20 20:32:15 garage kernel: [    0.000000] Memory: 437208K/458752K available (5926K kernel code, 358K rwdata, 1876K rodata, 340K init, 734K bss, 21544K reserved)
+Mar 20 20:32:15 garage kernel: [    0.000000] Virtual kernel memory layout:
+Mar 20 20:32:15 garage kernel: [    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+Mar 20 20:32:15 garage kernel: [    0.000000]     fixmap  : 0xffc00000 - 0xffe00000   (2048 kB)
+Mar 20 20:32:15 garage kernel: [    0.000000]     vmalloc : 0xdc800000 - 0xff000000   ( 552 MB)
+Mar 20 20:32:15 garage kernel: [    0.000000]     lowmem  : 0xc0000000 - 0xdc000000   ( 448 MB)
+Mar 20 20:32:15 garage kernel: [    0.000000]     modules : 0xbf000000 - 0xc0000000   (  16 MB)
+Mar 20 20:32:15 garage kernel: [    0.000000]       .text : 0xc0008000 - 0xc07a6ad8   (7803 kB)
+Mar 20 20:32:15 garage kernel: [    0.000000]       .init : 0xc07a7000 - 0xc07fc000   ( 340 kB)
+Mar 20 20:32:15 garage kernel: [    0.000000]       .data : 0xc07fc000 - 0xc085588c   ( 359 kB)
+Mar 20 20:32:15 garage kernel: [    0.000000]        .bss : 0xc085588c - 0xc090d128   ( 735 kB)
+Mar 20 20:32:15 garage kernel: [    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+Mar 20 20:32:15 garage kernel: [    0.000000] Preemptible hierarchical RCU implementation.
+Mar 20 20:32:15 garage kernel: [    0.000000] NR_IRQS:522
+Mar 20 20:32:15 garage kernel: [    0.000024] sched_clock: 32 bits at 1000kHz, resolution 1000ns, wraps every 2147483648000ns
+Mar 20 20:32:15 garage kernel: [    0.000075] Switching to timer-based delay loop, resolution 1000ns
+Mar 20 20:32:15 garage kernel: [    0.000353] Console: colour dummy device 80x30
+Mar 20 20:32:15 garage kernel: [    0.001412] console [tty1] enabled
+Mar 20 20:32:15 garage kernel: [    0.001459] Calibrating delay loop (skipped), value calculated using timer frequency.. 2.00 BogoMIPS (lpj=10000)
+Mar 20 20:32:15 garage kernel: [    0.001534] pid_max: default: 32768 minimum: 301
+Mar 20 20:32:15 garage kernel: [    0.001913] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Mar 20 20:32:15 garage kernel: [    0.001979] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Mar 20 20:32:15 garage kernel: [    0.002984] Initializing cgroup subsys memory
+Mar 20 20:32:15 garage kernel: [    0.003076] Initializing cgroup subsys devices
+Mar 20 20:32:15 garage kernel: [    0.003135] Initializing cgroup subsys freezer
+Mar 20 20:32:15 garage kernel: [    0.003189] Initializing cgroup subsys net_cls
+Mar 20 20:32:15 garage kernel: [    0.003241] Initializing cgroup subsys blkio
+Mar 20 20:32:15 garage kernel: [    0.003363] CPU: Testing write buffer coherency: ok
+Mar 20 20:32:15 garage kernel: [    0.003477] ftrace: allocating 19479 entries in 58 pages
+Mar 20 20:32:15 garage kernel: [    0.111631] Setting up static identity map for 0x55d058 - 0x55d0b4
+Mar 20 20:32:15 garage kernel: [    0.114448] devtmpfs: initialized
+Mar 20 20:32:15 garage kernel: [    0.131899] VFP support v0.3: implementor 41 architecture 1 part 20 variant b rev 5
+Mar 20 20:32:15 garage kernel: [    0.135076] pinctrl core: initialized pinctrl subsystem
+Mar 20 20:32:15 garage kernel: [    0.137764] NET: Registered protocol family 16
+Mar 20 20:32:15 garage kernel: [    0.143226] DMA: preallocated 4096 KiB pool for atomic coherent allocations
+Mar 20 20:32:15 garage kernel: [    0.171403] cpuidle: using governor ladder
+Mar 20 20:32:15 garage kernel: [    0.201467] cpuidle: using governor menu
+Mar 20 20:32:15 garage kernel: [    0.201974] bcm2708.uart_clock = 3000000
+Mar 20 20:32:15 garage kernel: [    0.205444] No ATAGs?
+Mar 20 20:32:15 garage kernel: [    0.205510] hw-breakpoint: found 6 breakpoint and 1 watchpoint registers.
+Mar 20 20:32:15 garage kernel: [    0.205572] hw-breakpoint: maximum watchpoint size is 4 bytes.
+Mar 20 20:32:15 garage kernel: [    0.205640] mailbox: Broadcom VideoCore Mailbox driver
+Mar 20 20:32:15 garage kernel: [    0.205806] bcm2708_vcio: mailbox at f200b880
+Mar 20 20:32:15 garage kernel: [    0.206296] bcm_power: Broadcom power driver
+Mar 20 20:32:15 garage kernel: [    0.206353] bcm_power_open() -> 0
+Mar 20 20:32:15 garage kernel: [    0.206382] bcm_power_request(0, 8)
+Mar 20 20:32:15 garage kernel: [    0.707122] bcm_mailbox_read -> 00000080, 0
+Mar 20 20:32:15 garage kernel: [    0.707169] bcm_power_request -> 0
+Mar 20 20:32:15 garage kernel: [    0.707366] Serial: AMBA PL011 UART driver
+Mar 20 20:32:15 garage kernel: [    0.707612] dev:f1: ttyAMA0 at MMIO 0x20201000 (irq = 83, base_baud = 0) is a PL011 rev3
+Mar 20 20:32:15 garage kernel: [    1.097038] console [ttyAMA0] enabled
+Mar 20 20:32:15 garage kernel: [    1.170110] SCSI subsystem initialized
+Mar 20 20:32:15 garage kernel: [    1.174234] usbcore: registered new interface driver usbfs
+Mar 20 20:32:15 garage kernel: [    1.180025] usbcore: registered new interface driver hub
+Mar 20 20:32:15 garage kernel: [    1.185521] usbcore: registered new device driver usb
+Mar 20 20:32:15 garage kernel: [    1.192703] Switched to clocksource stc
+Mar 20 20:32:15 garage kernel: [    1.227083] FS-Cache: Loaded
+Mar 20 20:32:15 garage kernel: [    1.230428] CacheFiles: Loaded
+Mar 20 20:32:15 garage kernel: [    1.250541] NET: Registered protocol family 2
+Mar 20 20:32:15 garage kernel: [    1.256488] TCP established hash table entries: 4096 (order: 2, 16384 bytes)
+Mar 20 20:32:15 garage kernel: [    1.263898] TCP bind hash table entries: 4096 (order: 2, 16384 bytes)
+Mar 20 20:32:15 garage kernel: [    1.270457] TCP: Hash tables configured (established 4096 bind 4096)
+Mar 20 20:32:15 garage kernel: [    1.276962] TCP: reno registered
+Mar 20 20:32:15 garage kernel: [    1.280230] UDP hash table entries: 256 (order: 0, 4096 bytes)
+Mar 20 20:32:15 garage kernel: [    1.286157] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+Mar 20 20:32:15 garage kernel: [    1.292910] NET: Registered protocol family 1
+Mar 20 20:32:15 garage kernel: [    1.297914] RPC: Registered named UNIX socket transport module.
+Mar 20 20:32:15 garage kernel: [    1.304003] RPC: Registered udp transport module.
+Mar 20 20:32:15 garage kernel: [    1.308734] RPC: Registered tcp transport module.
+Mar 20 20:32:15 garage kernel: [    1.313501] RPC: Registered tcp NFSv4.1 backchannel transport module.
+Mar 20 20:32:15 garage kernel: [    1.321184] bcm2708_dma: DMA manager at f2007000
+Mar 20 20:32:15 garage kernel: [    1.326237] vc-mem: phys_addr:0x00000000 mem_base=0x1ec00000 mem_size:0x20000000(512 MiB)
+Mar 20 20:32:15 garage kernel: [    1.336091] futex hash table entries: 256 (order: -1, 3072 bytes)
+Mar 20 20:32:15 garage kernel: [    1.342358] audit: initializing netlink subsys (disabled)
+Mar 20 20:32:15 garage kernel: [    1.348079] audit: type=2000 audit(1.100:1): initialized
+Mar 20 20:32:15 garage kernel: [    1.368934] VFS: Disk quotas dquot_6.5.2
+Mar 20 20:32:15 garage kernel: [    1.373446] Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+Mar 20 20:32:15 garage kernel: [    1.382938] FS-Cache: Netfs 'nfs' registered for caching
+Mar 20 20:32:15 garage kernel: [    1.390035] NFS: Registering the id_resolver key type
+Mar 20 20:32:15 garage kernel: [    1.395348] Key type id_resolver registered
+Mar 20 20:32:15 garage kernel: [    1.399563] Key type id_legacy registered
+Mar 20 20:32:15 garage kernel: [    1.405091] msgmni has been set to 869
+Mar 20 20:32:15 garage kernel: [    1.411349] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
+Mar 20 20:32:15 garage kernel: [    1.419369] io scheduler noop registered
+Mar 20 20:32:15 garage kernel: [    1.423512] io scheduler deadline registered (default)
+Mar 20 20:32:15 garage kernel: [    1.429089] io scheduler cfq registered
+Mar 20 20:32:15 garage kernel: [    1.435635] BCM2708FB: allocated DMA memory 5bc00000
+Mar 20 20:32:15 garage kernel: [    1.440702] BCM2708FB: allocated DMA channel 0 @ f2007000
+Mar 20 20:32:15 garage kernel: [    1.452192] Console: switching to colour frame buffer device 82x26
+Mar 20 20:32:15 garage kernel: [    1.464515] bcm2708-dmaengine bcm2708-dmaengine: Load BCM2835 DMA engine driver
+Mar 20 20:32:15 garage kernel: [    1.474144] uart-pl011 dev:f1: no DMA platform data
+Mar 20 20:32:15 garage kernel: [    1.481569] vc-cma: Videocore CMA driver
+Mar 20 20:32:15 garage kernel: [    1.487316] vc-cma: vc_cma_base      = 0x00000000
+Mar 20 20:32:15 garage kernel: [    1.493719] vc-cma: vc_cma_size      = 0x00000000 (0 MiB)
+Mar 20 20:32:15 garage kernel: [    1.500696] vc-cma: vc_cma_initial   = 0x00000000 (0 MiB)
+Mar 20 20:32:15 garage kernel: [    1.521309] brd: module loaded
+Mar 20 20:32:15 garage kernel: [    1.533324] loop: module loaded
+Mar 20 20:32:15 garage kernel: [    1.538516] vchiq: vchiq_init_state: slot_zero = 0xdb800000, is_master = 0
+Mar 20 20:32:15 garage kernel: [    1.548147] Loading iSCSI transport class v2.0-870.
+Mar 20 20:32:15 garage kernel: [    1.556355] usbcore: registered new interface driver smsc95xx
+Mar 20 20:32:15 garage kernel: [    1.564020] dwc_otg: version 3.00a 10-AUG-2012 (platform bus)
+Mar 20 20:32:15 garage kernel: [    1.771620] Core Release: 2.80a
+Mar 20 20:32:15 garage kernel: [    1.776446] Setting default values for core params
+Mar 20 20:32:15 garage kernel: [    1.782816] Finished setting default values for core params
+Mar 20 20:32:15 garage kernel: [    1.990083] Using Buffer DMA mode
+Mar 20 20:32:15 garage kernel: [    1.994994] Periodic Transfer Interrupt Enhancement - disabled
+Mar 20 20:32:15 garage kernel: [    2.002385] Multiprocessor Interrupt Enhancement - disabled
+Mar 20 20:32:15 garage kernel: [    2.009556] OTG VER PARAM: 0, OTG VER FLAG: 0
+Mar 20 20:32:15 garage kernel: [    2.015545] Dedicated Tx FIFOs mode
+Mar 20 20:32:15 garage kernel: [    2.020993] WARN::dwc_otg_hcd_init:1047: FIQ DMA bounce buffers: virt = 0xdbc14000 dma = 0x5bc14000 len=9024
+Mar 20 20:32:15 garage kernel: [    2.034047] FIQ FSM acceleration enabled for :
+Mar 20 20:32:15 garage kernel: [    2.034047] Non-periodic Split Transactions
+Mar 20 20:32:15 garage kernel: [    2.034047] Periodic Split Transactions
+Mar 20 20:32:15 garage kernel: [    2.034047] High-Speed Isochronous Endpoints
+Mar 20 20:32:15 garage kernel: [    2.057062] dwc_otg: Microframe scheduler enabled
+Mar 20 20:32:15 garage kernel: [    2.057170] WARN::hcd_init_fiq:412: FIQ on core 0 at 0xc040116c
+Mar 20 20:32:15 garage kernel: [    2.064765] WARN::hcd_init_fiq:413: FIQ ASM at 0xc0401444 length 36
+Mar 20 20:32:15 garage kernel: [    2.072697] WARN::hcd_init_fiq:438: MPHI regs_base at 0xdc806000
+Mar 20 20:32:15 garage kernel: [    2.080407] dwc_otg bcm2708_usb: DWC OTG Controller
+Mar 20 20:32:15 garage kernel: [    2.086996] dwc_otg bcm2708_usb: new USB bus registered, assigned bus number 1
+Mar 20 20:32:15 garage kernel: [    2.095966] dwc_otg bcm2708_usb: irq 32, io mem 0x00000000
+Mar 20 20:32:15 garage kernel: [    2.103141] Init: Port Power? op_state=1
+Mar 20 20:32:15 garage kernel: [    2.108632] Init: Power Port (0)
+Mar 20 20:32:15 garage kernel: [    2.113865] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+Mar 20 20:32:15 garage kernel: [    2.122309] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+Mar 20 20:32:15 garage kernel: [    2.131203] usb usb1: Product: DWC OTG Controller
+Mar 20 20:32:15 garage kernel: [    2.137547] usb usb1: Manufacturer: Linux 3.18.7+ dwc_otg_hcd
+Mar 20 20:32:15 garage kernel: [    2.144936] usb usb1: SerialNumber: bcm2708_usb
+Mar 20 20:32:15 garage kernel: [    2.152182] hub 1-0:1.0: USB hub found
+Mar 20 20:32:15 garage kernel: [    2.157755] hub 1-0:1.0: 1 port detected
+Mar 20 20:32:15 garage kernel: [    2.163982] dwc_otg: FIQ enabled
+Mar 20 20:32:15 garage kernel: [    2.164007] dwc_otg: NAK holdoff enabled
+Mar 20 20:32:15 garage kernel: [    2.164019] dwc_otg: FIQ split-transaction FSM enabled
+Mar 20 20:32:15 garage kernel: [    2.164080] Module dwc_common_port init
+Mar 20 20:32:15 garage kernel: [    2.164651] usbcore: registered new interface driver usb-storage
+Mar 20 20:32:15 garage kernel: [    2.172887] mousedev: PS/2 mouse device common for all mice
+Mar 20 20:32:15 garage kernel: [    2.180930] bcm2835-cpufreq: min=700000 max=700000
+Mar 20 20:32:15 garage kernel: [    2.187812] sdhci: Secure Digital Host Controller Interface driver
+Mar 20 20:32:15 garage kernel: [    2.195708] sdhci: Copyright(c) Pierre Ossman
+Mar 20 20:32:15 garage kernel: [    2.201918] DMA channels allocated for the MMC driver
+Mar 20 20:32:15 garage kernel: [    2.242784] Load BCM2835 MMC driver
+Mar 20 20:32:15 garage kernel: [    2.249852] sdhci-pltfm: SDHCI platform and OF driver helper
+Mar 20 20:32:15 garage kernel: [    2.265728] ledtrig-cpu: registered to indicate activity on CPUs
+Mar 20 20:32:15 garage kernel: [    2.273855] hidraw: raw HID events driver (C) Jiri Kosina
+Mar 20 20:32:15 garage kernel: [    2.287646] usbcore: registered new interface driver usbhid
+Mar 20 20:32:15 garage kernel: [    2.297043] usbhid: USB HID core driver
+Mar 20 20:32:15 garage kernel: [    2.304203] TCP: cubic registered
+Mar 20 20:32:15 garage kernel: [    2.311332] Initializing XFRM netlink socket
+Mar 20 20:32:15 garage kernel: [    2.317399] NET: Registered protocol family 17
+Mar 20 20:32:15 garage kernel: [    2.323814] Key type dns_resolver registered
+Mar 20 20:32:15 garage kernel: [    2.331479] registered taskstats version 1
+Mar 20 20:32:15 garage kernel: [    2.337559] vc-sm: Videocore shared memory driver
+Mar 20 20:32:15 garage kernel: [    2.343999] [vc_sm_connected_init]: start
+Mar 20 20:32:15 garage kernel: [    2.350861] [vc_sm_connected_init]: end - returning 0
+Mar 20 20:32:15 garage kernel: [    2.359501] Waiting for root device /dev/mmcblk0p2...
+Mar 20 20:32:15 garage kernel: [    2.366678] Indeed it is in host mode hprt0 = 00021501
+Mar 20 20:32:15 garage kernel: [    2.378156] mmc0: host does not support reading read-only switch, assuming write-enable
+Mar 20 20:32:15 garage kernel: [    2.404968] mmc0: new high speed SDHC card at address 0002
+Mar 20 20:32:15 garage kernel: [    2.422824] mmcblk0: mmc0:0002 00000 7.41 GiB 
+Mar 20 20:32:15 garage kernel: [    2.434403]  mmcblk0: p1 p2
+Mar 20 20:32:15 garage kernel: [    2.501676] EXT4-fs (mmcblk0p2): mounted filesystem with ordered data mode. Opts: (null)
+Mar 20 20:32:15 garage kernel: [    2.513341] VFS: Mounted root (ext4 filesystem) readonly on device 179:2.
+Mar 20 20:32:15 garage kernel: [    2.523399] devtmpfs: mounted
+Mar 20 20:32:15 garage kernel: [    2.529220] Freeing unused kernel memory: 340K (c07a7000 - c07fc000)
+Mar 20 20:32:15 garage kernel: [    2.582973] usb 1-1: new high-speed USB device number 2 using dwc_otg
+Mar 20 20:32:15 garage kernel: [    2.593737] Indeed it is in host mode hprt0 = 00001101
+Mar 20 20:32:15 garage kernel: [    2.803266] usb 1-1: New USB device found, idVendor=0424, idProduct=9512
+Mar 20 20:32:15 garage kernel: [    2.811917] usb 1-1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+Mar 20 20:32:15 garage kernel: [    2.824326] hub 1-1:1.0: USB hub found
+Mar 20 20:32:15 garage kernel: [    2.831405] hub 1-1:1.0: 3 ports detected
+Mar 20 20:32:15 garage kernel: [    3.113108] usb 1-1.1: new high-speed USB device number 3 using dwc_otg
+Mar 20 20:32:15 garage kernel: [    3.223469] usb 1-1.1: New USB device found, idVendor=0424, idProduct=ec00
+Mar 20 20:32:15 garage kernel: [    3.232427] usb 1-1.1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+Mar 20 20:32:15 garage kernel: [    3.254059] smsc95xx v1.0.4
+Mar 20 20:32:15 garage kernel: [    3.320926] smsc95xx 1-1.1:1.0 eth0: register 'smsc95xx' at usb-bcm2708_usb-1.1, smsc95xx USB 2.0 Ethernet, b8:27:eb:bc:4b:4a
+Mar 20 20:32:15 garage kernel: [    3.433030] usb 1-1.2: new high-speed USB device number 4 using dwc_otg
+Mar 20 20:32:15 garage kernel: [    3.563411] usb 1-1.2: New USB device found, idVendor=04b4, idProduct=6560
+Mar 20 20:32:15 garage kernel: [    3.572392] usb 1-1.2: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+Mar 20 20:32:15 garage kernel: [    3.584044] hub 1-1.2:1.0: USB hub found
+Mar 20 20:32:15 garage kernel: [    3.591482] hub 1-1.2:1.0: 4 ports detected
+Mar 20 20:32:15 garage kernel: [    3.873028] usb 1-1.2.2: new high-speed USB device number 5 using dwc_otg
+Mar 20 20:32:15 garage kernel: [    4.195065] usb 1-1.2.2: New USB device found, idVendor=046d, idProduct=0825
+Mar 20 20:32:15 garage kernel: [    4.212914] usb 1-1.2.2: New USB device strings: Mfr=0, Product=0, SerialNumber=2
+Mar 20 20:32:15 garage kernel: [    4.227239] usb 1-1.2.2: SerialNumber: 8A176F60
+Mar 20 20:32:15 garage kernel: [    6.017450] bcm2708_spi 20204000.spi: master is unqueued, this is deprecated
+Mar 20 20:32:15 garage kernel: [    6.228916] bcm2708_spi 20204000.spi: SPI Controller at 0x20204000 (irq 80)
+Mar 20 20:32:15 garage kernel: [    6.273354] media: Linux media interface: v0.10
+Mar 20 20:32:15 garage kernel: [    6.410827] bcm2708_i2c_init_pinmode(1,2)
+Mar 20 20:32:15 garage kernel: [    6.463164] bcm2708_i2c_init_pinmode(1,3)
+Mar 20 20:32:15 garage kernel: [    6.469465] bcm2708_i2c 20804000.i2c: BSC1 Controller at 0x20804000 (irq 79) (baudrate 100000)
+Mar 20 20:32:15 garage kernel: [    6.496675] Linux video capture interface: v2.00
+Mar 20 20:32:15 garage kernel: [    7.343363] uvcvideo: Found UVC 1.00 device <unnamed> (046d:0825)
+Mar 20 20:32:15 garage kernel: [    7.537710] input: UVC Camera (046d:0825) as /devices/platform/bcm2708_usb/usb1/1-1/1-1.2/1-1.2.2/1-1.2.2:1.0/input/input0
+Mar 20 20:32:15 garage kernel: [    7.733226] usbcore: registered new interface driver uvcvideo
+Mar 20 20:32:15 garage kernel: [    7.740993] USB Video Class driver (1.1.1)
+Mar 20 20:32:15 garage kernel: [    9.498522] usb 1-1.2.2: set resolution quirk: cval->res = 384
+Mar 20 20:32:15 garage kernel: [    9.518854] usbcore: registered new interface driver snd-usb-audio
+Mar 20 20:32:15 garage kernel: [   12.289748] EXT4-fs (mmcblk0p2): re-mounted. Opts: (null)
+Mar 20 20:32:15 garage kernel: [   12.457955] random: nonblocking pool is initialized
+Mar 20 20:32:15 garage kernel: [   13.254005] EXT4-fs (mmcblk0p2): re-mounted. Opts: (null)
+Mar 20 20:32:15 garage kernel: [   22.793669] smsc95xx 1-1.1:1.0 eth0: hardware isn't capable of remote wakeup
+Mar 20 20:32:15 garage kernel: [   24.318463] smsc95xx 1-1.1:1.0 eth0: link up, 100Mbps, full-duplex, lpa 0x45E1
+Mar 20 20:32:17 garage kernel: [   34.362554] Adding 102396k swap on /var/swap.  Priority:-1 extents:2 across:2134012k SSFS

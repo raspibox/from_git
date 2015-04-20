@@ -40,9 +40,9 @@ def main():
   except KeyboardInterrupt:
     print("Measurement stopped by user")
     GPIO.output(GPIO_Rel1, False)
-    GPIO.output(GPIO_Rel2, False)
-    GPIO.output(GPIO_Rel3, False)
-    GPIO.output(GPIO_Rel4, False)
+ #   GPIO.output(GPIO_Rel2, False)
+ #   GPIO.output(GPIO_Rel3, False)
+ #   GPIO.output(GPIO_Rel4, False)
 
   GPIO.cleanup()
 
@@ -52,18 +52,18 @@ if __name__ == '__main__':
 
   # set up GPIO pins
   GPIO.setup(GPIO_Rel1, GPIO.OUT)
-  GPIO.setup(GPIO_Rel2, GPIO.OUT)
-  GPIO.setup(GPIO_Rel3, GPIO.OUT)
-  GPIO.setup(GPIO_Rel4, GPIO.OUT)
+#  GPIO.setup(GPIO_Rel2, GPIO.OUT)
+#  GPIO.setup(GPIO_Rel3, GPIO.OUT)
+#  GPIO.setup(GPIO_Rel4, GPIO.OUT)
   GPIO.setup(GPIO_In1, GPIO.IN)
   GPIO.setup(GPIO_In2, GPIO.IN)  
   GPIO.setup(GPIO_In3, GPIO.IN)
 
   # set outpt state for relais to "high" as the are "low" enabled
   GPIO.output(GPIO_Rel1, True)
-  GPIO.output(GPIO_Rel2, True)
-  GPIO.output(GPIO_Rel3, True)
-  GPIO.output(GPIO_Rel4, True)
+#  GPIO.output(GPIO_Rel2, True)
+#  GPIO.output(GPIO_Rel3, True)
+#  GPIO.output(GPIO_Rel4, True)
 
 
   # call main function

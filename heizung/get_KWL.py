@@ -16,10 +16,8 @@ GPIO.setwarnings(False)
 
 # Set all relevant Pins to "HIGH" which switches all of - then CWL runs in level "1"
 GPIO.setup(23, GPIO.OUT)
-GPIO.output(23, GPIO.HIGH)
 GPIO.setup(21, GPIO.OUT)
-GPIO.output(21, GPIO.HIGH)
-
+xx = GPIO.input(21)
 Pin = ""
 KWL_Stufe = int(sys.argv[1])
 if KWL_Stufe == 0:    

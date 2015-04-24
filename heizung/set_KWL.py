@@ -33,6 +33,7 @@ elif KWL_Stufe == 3:
   Pin = 21
   print("Pin", Pin," auf low")
   GPIO.output(Pin, GPIO.LOW)
-else print("Nothing to do at the moment")
+else:
+  print("Nothing to do at the moment")
 
 print("end")

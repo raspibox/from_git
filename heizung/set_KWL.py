@@ -26,8 +26,8 @@ if KWL_Stufe == 0:
   print("Pin", Pin," auf low")
   GPIO.output(Pin, GPIO.LOW)
 
-elif KWL_Stufe == 1:
-elif KWL_Stufe == 2:
+#elif KWL_Stufe == 1:
+#elif KWL_Stufe == 2:
 elif KWL_Stufe == 3:  
   Pin = 21
   print("Pin", Pin," auf low")

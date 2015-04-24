@@ -12,6 +12,7 @@ import sys
 
 # Pin Nummern vervenden statt GPIO Nummern
 GPIO.setmode(GPIO.BOARD)
+GPIO.setwarnings(False)
 
 # Set all relevant Pins to "HIGH" which switches all of - then CWL runs in level "1"
 GPIO.setup(23, GPIO.OUT)
@@ -32,5 +33,6 @@ elif KWL_Stufe == 3:
   Pin = 21
   print("Pin", Pin," auf low")
   GPIO.output(Pin, GPIO.LOW)
+else print("Nothing to do at the moment")
 
 print("end")

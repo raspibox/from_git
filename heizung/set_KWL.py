@@ -4,33 +4,33 @@
 # Skript um die Wohnraumlüftung zu steuern
 #   die Relais sind LOW-aktiv
 #   
+#   Derzeit sind nur die Stufen 0 & 3 implementiert; bei den anderen werden alle Relais auf HIGH gesetzt (somit wieder Stufe 1)
 import RPi.GPIO as GPIO
 import time
+import sys
 
-print("start 23 = grün = IN4 = Stufe 0")
+
 # Pin Nummern vervenden statt GPIO Nummern
 GPIO.setmode(GPIO.BOARD)
 
-# Pin 23 (GPIO 11)
+# Set all relevant Pins to "HIGH" which switches all of - then CWL runs in level "1"
 GPIO.setup(23, GPIO.OUT)
-print("23 auf low")
-GPIO.output(23, GPIO.LOW)
-time.sleep(15)
-print("23 auf high")
 GPIO.output(23, GPIO.HIGH)
-time.sleep(5)
-
-print("start 21 = gelb = IN2 = Stufe 3")
-
-# Pin 21 (GPIO 9)
 GPIO.setup(21, GPIO.OUT)
-print("23 auf low")
-GPIO.output(21, GPIO.LOW)
-time.sleep(15)
-print("21 auf high")
 GPIO.output(21, GPIO.HIGH)
-time.sleep(5)
 
-# aufräumen
-GPIO.cleanup()
+Pin = ""
+KWL_Stufe = int(sys.argv[1])
+if KWL_Stufe == 0:    
+  Pin = 23
+  print("Pin", Pin," auf low")
+  GPIO.output(Pin, GPIO.LOW)
+
+elif KWL_Stufe == 1:
+elif KWL_Stufe == 2:
+elif KWL_Stufe == 3:  
+  Pin = 21
+  print("Pin", Pin," auf low")
+  GPIO.output(Pin, GPIO.LOW)
+
 print("end")

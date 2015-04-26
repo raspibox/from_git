@@ -3,10 +3,10 @@
 # ========================================
 #
 use Device::SerialPort;
-my $port = Device::SerialPort->new("/dev/ttyOpenHabStrom") || die $!;
-$port->databits(7);
-$port->baudrate(300);
-$port->parity("even");
+my $port = Device::SerialPort->new("/dev/ttyUSB0") || die $!;
+$port->databits(8);
+$port->baudrate(9600);
+$port->parity("none");
 $port->stopbits(1);
 $port->handshake("none");
 $port->write_settings;

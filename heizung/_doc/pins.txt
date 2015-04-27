@@ -49,4 +49,4 @@ Relais KWL Stufe 0	21 22  	SPI-CS für 3208 IC
 Relais KWL Stufe 3	23 24  	Umschaltung Relais Analogplatine
 				GND	25 26  	
 
-
+ 

@@ -1,0 +1,105 @@
+1b 1b 1b 1b 01 01 01 01 
+76 
+05 0c 88 0b 6a 
+62 00
+62 00 
+72 
+63 01 01 
+76 
+	01 
+	01 	Client ID
+	05 04 2d 59 24 		req FileID
+   	0b 06 49 53 4b 01 02 7a 20 de 0e 	Server ID
+ 
+
+01	Ref Time 
+01 	SML Version
+
+63 0f 43	CRC 
+
+00	 End of SML message
+
+76
+   05 0c 88 0b 6b 	Transaction ID
+   62 00 	groupNo
+   62 00 	abort on error
+72 
+   63 07 01 	Nachricht 0701 = SML_GetList.Res
+   77 
+   01 
+	0b 06 49 53 4b 01 02 7a 20 de 0e 	Server ID
+07 
+01 
+00 62 0a ff ff 
+72 
+	62 01 
+	65 07 1f 50 c4 77 
+	77 
+
+            07 81 81 c7 82 03 ff    objName 129-129:199.130.3*255
+                                    Herstelleridentifikation
+            01                                           status (leer)
+            01                                           valTime (leer)
+            01                                           unit(leer)
+            01                                           scaler (leer)       
+            04 49 53 4b                                 Value 
+	01 	ValueSignature(leer) 
+77 
+	07 01 00 00 00 09 ff  objName 1-0:0.0.9*255
+	01 	Status
+	01 	ValTime
+	01 	Unit
+	01 	Scaler
+	0b 06 49 53 4b 01 02 7a 20 de 0e 	Server ID
+	01 
+77 
+	07 01 00 01 08 00 ff 	objName 1-0:1.8.0*255  (Positive Gesamtwirkenergie)
+	65 00 
+	00 01 
+	82 01	 
+	62 1e 	unit (unsigned8) 1E = Wh
+	52 ff 	scaler (int8) -1 = *10^-1 = /10
+	59 00 00 00 00 06 80 10 4c 	Value 109056076 = 1090056 KWh /Scaler = 10509,6 KWh
+	01 
+77
+	07 01 00 01 08 01 ff 		objName 1-0:1.8.1*255 Positive Wirkenergie Tarif 1 (A+)
+	01 
+	01 
+	62 1e 	Unit (unsigned8)  1E= Wh
+	52 ff 	scaler (int8) -1 = *10^-1 = /10
+	59 00 00 00 00 06 80 10 4c 	109056076  --> 10905,6 KWh
+	01 
+77 
+	07 01 00 01 08 02 ff 	ObjName 1-0:1.8.2	xxxxxxxxxxxxxxx
+	01 
+	01 
+	62 1e 
+	52 ff 
+	59 00 00 00 00 00 00 00 00 
+	01 
+77
+	07 01 00 0f 07 00 ff 
+	01 
+	01 
+	62 1b 
+	52 00 65 00 00 03 a5 	Aktuell abgenommene Leistung in Watt
+	01 
+77 
+	07 81 81 c7 82 05 ff 
+	01 
+	01 01 01 83 02 a0 6f 12 bd 3c 0d 6d dd 2d 64 bc 6d 98 f1 8f
+c2 d3 d6 c5 b2 b3 f2 9d 40 2e 7b 7c 5d f4 a7 6c
+a3 40 51 84 47 7d eb 45 5a 9e 8f 74 f7 d4 d1 b0
+3f 01 01 01 63 43 7c 00 76 05 0c 88 0b 6c 62 00
+62 00 72 63 02 01 71 01 
+63 79 af 
+
+00 
+
+1b 1b 1b 1b	Esccape
+1a 00 aa a8  	Ende Message + CRC 
+
+
+
+
+1b 1b 1b 1b 01 01 01 01 76 05 0c 88

@@ -14,6 +14,8 @@
 #				-Solar und Abgastemperatur per python-Skript
 #			0.7:	2014-09-08 
 #				-Pfade für logfiles angepasst
+#			0.8:	2015-08-25
+#				-Alte Verweise auf Volkszaehler entfernt
 ##########################################
 
 
@@ -146,7 +148,7 @@ sub getTempValue {	#read content of file to get temperature
 				}
 			}
 		}
-	$ret = `curl -d "" "http://10.0.0.50/middleware.php/data/$sUUID.json?value=$GradC" >/dev/nul`;
+	#$ret = `curl -d "" "http://10.0.0.50/middleware.php/data/$sUUID.json?value=$GradC" >/dev/nul`;
 	return "$GradC";
 }
 
@@ -163,11 +165,11 @@ sub getAnalogSolar {
 		$solar = `python /eiler/analog.py solar`;
 		chomp $solar;
 		#print "http://10.0.0.50/middleware.php/data/$aSensorenUUID{\"Kollektor\"}.json?value=$solar";
-		$ret = `curl -d "" "http://10.0.0.50/middleware.php/data/$aSensorenUUID{"Kollektor"}.json?value=$solar"`;
-		$ret = `curl -d "" "http://10.0.0.50/middleware.php/data/$aSensorenUUID{"Ventil"}.json?value=1"`;
+		#$ret = `curl -d "" "http://10.0.0.50/middleware.php/data/$aSensorenUUID{"Kollektor"}.json?value=$solar"`;
+		#$ret = `curl -d "" "http://10.0.0.50/middleware.php/data/$aSensorenUUID{"Ventil"}.json?value=1"`;
 		return $solar;
 	}else{
-		$ret = `curl -d "" "http://10.0.0.50/middleware.php/data/$aSensorenUUID{"Ventil"}.json?value=0"`;
+		#$ret = `curl -d "" "http://10.0.0.50/middleware.php/data/$aSensorenUUID{"Ventil"}.json?value=0"`;
 		return $solar;
 	}
 }
@@ -246,10 +248,13 @@ sub sendeTemp {
 	&wlf ("Sending request: $sURL\n");
 	if (not $debug) {$ret = `curl "http://ertest.bplaced.net/push_data.php?$sHTTPGetStringParameter"`};
 	$sHTTPGetStringParameter=getTempValue("Aussen");
-	#print "ret: $ret\n";        
+	my $CurlParam = "curl -X PUT -H \"Content-Type: text/plain\" http://sd-defekt:8080/rest/items/Temp_Brauchwasser/state -d " . getTempValue("P4") ;
+	print "$CurlParam\n";	
+	if (not $debug) {$ret = `$CurlParam`};
+	print "ret: $ret\n";        
 	#print "para: $sHTTPGetStringParameter\n";
-	&wlf ("Sending request to VZ");
-        if (not $debug) {$ret = `curl -d "" "http://10.0.0.50/middleware.php/data/7e9b8a70-37a0-11e4-b8b1-7dbd4d4a8024.json?value=$sHTTPGetStringParameter"`};
+	#&wlf ("Sending request to VZ");
+    #    if (not $debug) {$ret = `curl -d "" "http://10.0.0.50/middleware.php/data/7e9b8a70-37a0-11e4-b8b1-7dbd4d4a8024.json?value=$sHTTPGetStringParameter"`};
         #print "ret: $ret\n";
 #        &wlf ("Sending request to testserver:\n");
 #        if (not $debug) {$ret = `curl "http://10.0.0.54/push_data.php?$sHTTPGetStringParameter"`};

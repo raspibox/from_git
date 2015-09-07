@@ -153,7 +153,8 @@ sub getTempValue {	#read content of file to get temperature
 }
 
 sub getAnalogAbgas {
-	$abgas = `python /eiler/analog.py abgas`;
+#	$abgas = `python /eiler/analog.py abgas`;
+	$abgas = `python /home/pi/from_git/heizung/analog.py abgas`;
 	chomp $abgas;
 	return $abgas;
 }
@@ -162,7 +163,7 @@ sub getAnalogSolar {
 	#print "Durchlauf: $i\n";
 	if ($i % 10 == 1){	#Messung der Kollektortemp nur bei jeder x-ten Messung, da dies den Messert der WOLF Steuerung beeinflusst wenn das Signal zu oft fehlt
 		#print "Treffer: $i\n";
-		$solar = `python /eiler/analog.py solar`;
+		$solar = `python /home/pi/from_git/heizung/analog.py solar`;
 		chomp $solar;
 		#print "http://10.0.0.50/middleware.php/data/$aSensorenUUID{\"Kollektor\"}.json?value=$solar";
 		#$ret = `curl -d "" "http://10.0.0.50/middleware.php/data/$aSensorenUUID{"Kollektor"}.json?value=$solar"`;

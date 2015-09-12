@@ -1,0 +1,182 @@
+//
+//Group PersistentHistory
+//Group PersistentChart
+//Group PersistentCurrent
+//
+//Number Gas_Pulse_Counter																			(PersistentHistory)				{ knx="<13.001:0/4/6" }
+//Number Gas_Current_Count						"Zählerstand [%.2f m³]"			<selfGas>			(PersistentHistory)
+//Number Gas_Current_Daily_Consumption 			"Tagesverbrauch [%.2f m³]"		<selfGas> 			(PersistentCurrent)
+//Number Gas_Current_Consumption 					"Aktueller Verbrauch [%.2f m³]"	<selfGas>			(PersistentChart)
+//Number Gas_Last_Daily_Consumption				"Gas" 												(PersistentChart)
+//Number Gas_Annual_Consumption 					"Aktuelle Periode [%.2f m³]"	<selfGas>			(PersistentCurrent)
+//String Gas_Forecast 							"Hochrechnung [%s]"				<selfGas>			(PersistentCurrent)
+//
+//Number Electricity_Meter						"Zählerstand [%.2f KWh]"		<selfEnergy>		(PersistentHistory)
+//Number Electricity_Current_Daily_Consumption	"Tagesverbrauch [%.2f KWh]"		<selfEnergy> 		(PersistentCurrent)
+//Number Electricity_Current_Consumption 			"Aktueller Verbrauch [%d Watt]"	<selfEnergy>		(PersistentChart)
+//Number Electricity_Last_Daily_Consumption		"Strom"												(PersistentChart)
+//Number Electricity_Annual_Consumption 			"Aktuelle Periode [%.2f KWh]"	<selfEnergy>		(PersistentCurrent)
+//String Electricity_Forecast 					"Hochrechnung [%s]"				<selfEnergy>		(PersistentCurrent)
+//
+//Number Ventilation_Control						"Steuerung" 					<settings>											{comfoair="activate"}
+//Number Ventilation_Auto_Mode					"Modus"							<selfAutoMode> 		(PersistentCurrent)
+//Number Ventilation_Fan_Level					"Stufe [%d]" 					<selfAiring> 		(PersistentHistory)				{comfoair="fan_level"}
+//Number Ventilation_Comfort_Temperature 			"Ziel [%.1f °C]"				<selfTemperature> 									{comfoair="target_temperatur"}
+//Number Ventilation_Bypass						"Bypass [MAP(bypass_de.map):%s]" <selfBypass> 										{comfoair="bypass_mode"}
+//
+//String Ventilation_Outdoor_Temperature_Message "Aussen [%s]"			<selfTemperature>	(PersistentCurrent)
+//String Ventilation_Indoor_Temperature_Message 	"Innen [%s]"					<selfTemperature>	(PersistentCurrent)
+//String Ventilation_Fan_Message 					"Ventilator [%s]"				<selfAiring>		(PersistentCurrent)
+//String Ventilation_Filter_Runtime_Message		"Filterlaufzeit [%s]" 			<selfRuntime>		(PersistentCurrent)
+//String Ventilation_State_Message				"Status [%s]"					<selfInfo>			(PersistentCurrent)
+//
+//Number Ventilation_Outdoor_Incoming_Temperature "Aussenzuluft [%.1f °C]"		<selfTemperature>									{comfoair="outdoor_incomming_temperatur"}
+//Number Ventilation_Outdoor_Outgoing_Temperature "Aussenabluft [%.1f °C]" 		<selfTemperature>									{comfoair="outdoor_outgoing_temperatur"}
+//Number Ventilation_Indoor_Incoming_Temperature 	"Raumzuluft [%.1f °C]" 			<selfTemperature>									{comfoair="indoor_incomming_temperatur"}
+//Number Ventilation_Indoor_Outgoing_Temperature 	"Raumabluft [%.1f °C]" 			<selfTemperature>									{comfoair="indoor_outgoing_temperatur"}
+//Number Ventilation_Incoming						"Ventilator Zuluft [%d %%]" 	<selfAiring>										{comfoair="incomming_fan"}
+//Number Ventilation_Outgoing						"Ventilator Abluft [%d %%]" 	<selfAiring>										{comfoair="outgoing_fan"}
+//Number Ventilation_Filter_Runtime				"Filterlaufzeit [%d h]" 		<selfRuntime>										{comfoair="filter_running"}
+///*Switch Ventilation_Filter_Reset				"Filterreset" 																		{comfoair="filter_reset"}*/
+//Number Ventilation_Filter_Error_I				"Filter (intern) [MAP(filter_de.map):%s]" <selfFilterintern>						{comfoair="filter_error_intern"}
+//Number Ventilation_Filter_Error_E				"Filter (extern) [MAP(filter_de.map):%s]" <selfFilterextern>						{comfoair="filter_error_extern"}
+///*Switch Ventilation_Error_Reset				"Fehlerreset" 																		{comfoair="error_reset"}*/
+//String Ventilation_Error_Message				"Fehlercode [%s]" 				<selfInfo> 											{comfoair="error_message"}
+//
+//Group Temperatures
+//Group Humidity
+//Group Heating_Temperatures
+//Group Solar_Temperatures
+//
+//Number Temperature_Livingroom 					"Wohnzimmer [%.1f °C]"			<selfTemperature>	(PersistentChart,PersistentHistory,Temperatures,Heating_Temperatures)	{s300th="address=1;datapoint=TEMPERATURE"}
+//Number Humidity_Livingroom 						"Wohnzimmer [%.1f %%]"			<chart>				(PersistentChart,Humidity)		{s300th="address=1;datapoint=HUMIDITY"}
+//Number Temperature_Bedroom 						"Schlafzimmer [%.1f °C]" 		<selfTemperature>	(PersistentChart,PersistentHistory,Temperatures)		{s300th="address=2;datapoint=TEMPERATURE"}
+//Number Humidity_Bedroom 						"Schlafzimmer [%.1f %%]" 		<chart>				(PersistentChart,Humidity)		{s300th="address=2;datapoint=HUMIDITY"}
+//Number Temperature_Attic 						"Dachboden [%.1f °C]"			<selfTemperature>	(PersistentChart,Temperatures)	{s300th="address=3;datapoint=TEMPERATURE"}
+//Number Humidity_Attic 							"Dachboden [%.1f %%]"			<chart>				(PersistentChart,Humidity)		{s300th="address=3;datapoint=HUMIDITY"}
+//Number Temperature_Garage 						"Schuppen [%.1f °C]"			<selfTemperature>	(PersistentChart,Temperatures)	{s300th="address=4;datapoint=TEMPERATURE"}
+//Number Humidity_Garage 							"Schuppen [%.1f %%]"			<chart>				(PersistentChart,Humidity)		{s300th="address=4;datapoint=HUMIDITY"}
+//Number Temperature_Floor 						"Flur [%.1f °C]" 				<selfTemperature>	(PersistentChart,PersistentHistory,Temperatures)	{s300th="address=5;datapoint=TEMPERATURE"}
+//Number Humidity_Floor 							"Flur [%.1f %%]" 				<chart>				(PersistentChart,Humidity)		{s300th="address=5;datapoint=HUMIDITY"}
+//
+//Number Temperature_Garden 						"Temperatur (Garten) [%.1f °C]"	<selfTemperature> 	(PersistentChart,PersistentHistory,Temperatures)	{s300th="address=ks300;datapoint=TEMPERATURE"}
+//Number Humidity_Garden 							"Luftfeuchtigkeit (Garten) [%.1f %%]"	<chart> 	(PersistentChart,Humidity)		{s300th="address=ks300;datapoint=HUMIDITY"}
+//
+//Number Wind_Garden 								"Wind [%d m/s]"					<selfWind>											{s300th="address=ks300;datapoint=WIND"}
+//Number Wind_Garden_Converted					"Wind [%d km/h]"				<selfWind>			(PersistentHistory)
+//Number Wind_Garden_Current 						"Wind [%d]"						<selfWind>			(PersistentChart)
+//
+//Number Temperature_Garden_Forecast				"Garten (Vorhersage AVG) [%.1f °C]" <selfTemperature>	(PersistentChart,PersistentCurrent)	{http="<[hourlyWeatherCache:900000:XSLT(weather_avg_temperature.xsl)]"}
+//String Wind_Direction							"Windrichtung [%s]"				<selfWind>			(PersistentCurrent)				{http="<[currentWeatherCache:900000:XSLT(weather_wind_direction.xsl)]"}
+//String Wind_Message								"Wind [%s]"						<selfWind>			(PersistentCurrent)
+//
+//Number Rain_Garden_Counter 						"Regen Zähler [%d]"				<chart>				(PersistentHistory)				{s300th="address=ks300;datapoint=RAIN"}
+//Number Regen_State_Garden 						"Regen Status [%d]"				<chart>												{s300th="address=ks300;datapoint=IS_RAINING"}
+//Number Rain_Garden_Current 						"Regen [%.1f]"					<chart>				(PersistentChart)
+//
+//String Air_Livingroom_Message 					"Wohnzimmer [%s]"				<selfTemperature>	(PersistentCurrent)
+//String Air_Bedroom_Message 						"Schlafzimmer [%s]"				<selfTemperature>	(PersistentCurrent)
+//String Air_Floor_Message 						"Flur [%s]"						<selfTemperature>	(PersistentCurrent)
+//String Air_Attic_Message 						"Dachboden [%s]"				<selfTemperature>	(PersistentCurrent)
+//String Air_Garage_Message 						"Schuppen [%s]"					<selfTemperature>	(PersistentCurrent)
+//String Air_Garden_Message						"Garten Aktuell [%s]"			<selfTemperature>	(PersistentCurrent)
+//
+//String Temperature_Garden_Message				"Garten Min / Max [%s]"			<selfTemperature>	(PersistentCurrent)
+//String Rain_Garden_Message						"Regen [%s]"					<selfWater>		(PersistentCurrent)
+//
+//Switch Heating_Livingroom_Circuit				"Wohnzimmer Kreis"				<settings>			(PersistentCurrent)				{fs20="C04B00"}
+//Number Heating_Temperature_Overall_OK			"Ziel OK"						<settings>			(PersistentHistory)
+//
+//Number Heating_Auto_Mode						"Modus"							<selfAutoMode> 		(PersistentCurrent)
+//Number Heating_Operating_Mode					"Betriebsart [MAP(heating_de.map):%d]" <settings>	(PersistentHistory)				{exec="1:/dataRaid/shared/tools/heizung/heizungBetriebsart.bash -t 1,2:/dataRaid/shared/tools/heizung/heizungBetriebsart.bash -t 2,3:/dataRaid/shared/tools/heizung/heizungBetriebsart.bash -t 3"}
+//Number Heating_Power							"Leistung [%d %%]"				<selfRuntime>		(PersistentChart,PersistentHistory)
+//Number Heating_Circuit_Pump_Speed				"Heizkreispumpe (Drehzahl) [%.1f %%]" <selfRuntime>	(PersistentChart)
+//String Heating_Power_Message					"Brenner, Heizkreis [%s]"		<selfGas>
+//Number Heating_Temperature_Room_Target	 		"Ziel [%.1f °C]" 				<selfTemperature>	
+//Number Heating_Temperature_Outdoor				"Aussen (Ist) [%.1f °C]"		<selfTemperature>	(PersistentChart,Heating_Temperatures)
+//Number Heating_Temperature_Outdoor_Subdued		"Aussen (Ged.) [%.1f °C]"		<selfTemperature>	(PersistentChart,Heating_Temperatures)
+//String Heating_Temperature_Outdoor_Message		"Aussen [%s]"					<selfTemperature>	
+//Number Heating_Temperature_Offset_Target		"Vorlauf (Soll) [%.1f °C]"		<selfTemperature>	(PersistentChart,Heating_Temperatures)
+//Number Heating_Temperature_Offset				"Vorlauf (Ist) [%.1f °C]"		<selfTemperature>	(PersistentChart,Heating_Temperatures)
+//String Heating_Temperature_Offset_Message		"Vorlauf [%s]	"				<selfTemperature>	
+//Number Heating_Temperature_Boiler_Target		"Kessel (Soll) [%.1f °C]"		<selfTemperature>	
+//Number Heating_Temperature_Boiler				"Kessel (Ist) [%.1f °C]"		<selfTemperature>	
+//String Heating_Temperature_Boiler_Message		"Kessel [%s]"					<selfTemperature>	
+//Number Heating_Burner_Starts					"Brennerstarts [%d]"			<settings>			(PersistentHistory)
+//Number Heating_Burner_Starts_Last				"Brennerstarts [%d]"			<settings>			(PersistentChart)
+//String Heating_Burner_Starts_Message			"Brennerstarts [%s]"			<selfGas>		
+//Number Heating_Burner_Hours						"Brennerstunden [%.1f]"			<selfRuntime>		(PersistentHistory)
+//Number Heating_Burner_Hours_Last				"Brennerstunden [%.1f]"			<selfRuntime>		(PersistentChart)
+//String Heating_Burner_Hours_Message				"Brennerstunden [%s]"			<selfGas>		
+//Number Heating_Temperature_Wather_Storage		"Wasser [%.1f °C]"				<selfTemperature>	(PersistentChart,Solar_Temperatures,Heating_Temperatures)
+//Number Heating_Temperature_Solar_Collector		"Solar Kollektor [%.1f °C]"		<selfTemperature>	(PersistentChart,Solar_Temperatures)
+//Number Heating_Temperature_Solar_Storage		"Solar Speicher [%.1f °C]"		<selfTemperature>	(PersistentChart,Solar_Temperatures)
+//String Heating_Temperature_Solar_Message		"Kollektor, Speicher [%s]"		<selfTemperature>	
+//Number Heating_Solar_Hours						"Solar Stunden [%d]"			<selfRuntime>		(PersistentHistory)
+//String Heating_Solar_Hours_Message				"Solar Stunden [%s]"			<selfRuntime>		
+//Number Heating_Solar_Power						"Solar Leistung [%.1f KW]"		<sun>				(PersistentHistory)
+//Number Heating_Solar_Power_Last					"Solar Leistung [%.1f KW]"		<sun>				(PersistentChart)
+//Number Heating_Solar_Power_Current				"Solar Leistung (heute) [%.1f KW]"	<sun>			
+//Number Heating_Solar_Power_Current5Min			"Solar Leistung [%.1f KW]"		<sun>				(PersistentChart)
+//String Heating_Solar_Power_Message				"Solar Leistung [%s]"			<sun>			
+//Number Heating_Solar_Pump_State					"Solar Pumpe [MAP(heating_pump_de.map):%d]" <selfRuntime>	(PersistentChart)
+//Number Heating_Solar_Reheating_State			"Nachladeunterdrückung [MAP(heating_state_de.map):%d]" <selfRuntime>
+//String Heating_Solar_State_Message				"Pumpe, Nachladeunterdr. [%s]"		<settings>
+//Number Heating_Common_Fault						"Status [MAP(heating_state_de.map):%d]"<selfInfo>
+//
+//Group Phones
+//Switch Device_Present
+//Switch Phone1 (PersistentHistory,Phones) {nh="192.168.0.103"}
+//
+//Group ServerInfo
+//Group ServerLoad
+//Group ServerTemperature
+//String LoadAvg_Info             				"Load AVG [%s]"                 <settings>      	(ServerInfo)    				{http="<[systemInfoCache:300000:XSLT(systemLoadAvg.xsl)]"}
+//String LoadAvg_1min             				"Load 1min [%s]"                <settings>          (PersistentChart,ServerLoad)    {http="<[systemInfoCache:300000:XSLT(systemLoad1min.xsl)]"}
+//String LoadAvg_5min             				"Load 5min [%s]"                <settings>			(PersistentChart,ServerLoad)    {http="<[systemInfoCache:300000:XSLT(systemLoad5min.xsl)]"}
+//String LoadAvg_15min            				"Load 15min [%s]"               <settings>          (PersistentChart,ServerLoad)    {http="<[systemInfoCache:300000:XSLT(systemLoad15min.xsl)]"}
+//Number MemoryUsage_Percent						"Hauptspeicher [%d %%]"			<selfMemory> 										{http="<[systemInfoCache:300000:XSLT(systemMemoryUsagePercent.xsl)]"}
+//String MemoryUsage_Info							"Hauptspeicher [%s]"			<selfMemory> 		(ServerInfo) 					{http="<[systemInfoCache:300000:XSLT(systemMemoryUsageInfo.xsl)]"}
+//Number Mountpoint0_Percent						"Disk0 [%d %%]"					<selfHarddisk>										{http="<[systemInfoCache:300000:XSLT(systemMount0UsagePercent.xsl)]"}
+//String Mountpoint0_Info							"HDD 'Root' [%s]"				<selfHarddisk> 		(ServerInfo) 					{http="<[systemInfoCache:300000:XSLT(systemMount0UsageInfo.xsl)]"}
+//Number Mountpoint1_Percent						"Disk1 [%d %%]"					<selfHarddisk>										{http="<[systemInfoCache:300000:XSLT(systemMount1UsagePercent.xsl)]"}
+//String Mountpoint1_Info							"HDD 'Home' [%s]"				<selfHarddisk> 		(ServerInfo) 					{http="<[systemInfoCache:300000:XSLT(systemMount1UsageInfo.xsl)]"}
+//Number Mountpoint2_Percent						"Disk2 [%d %%]"					<selfHarddisk>										{http="<[systemInfoCache:300000:XSLT(systemMount2UsagePercent.xsl)]"}
+//String Mountpoint2_Info							"HDD 'Data' [%s]"				<selfHarddisk> 		(ServerInfo) 					{http="<[systemInfoCache:300000:XSLT(systemMount2UsageInfo.xsl)]"}
+//Number Mountpoint3_Percent						"Disk3 [%d %%]"					<selfHarddisk>										{http="<[systemInfoCache:300000:XSLT(systemMount3UsagePercent.xsl)]"}
+//String Mountpoint3_Info							"HDD 'Raid' [%s]"				<selfHarddisk> 		(ServerInfo) 					{http="<[systemInfoCache:300000:XSLT(systemMount3UsageInfo.xsl)]"}
+//Number HardDisk0_Temp							"HDD SSD [%.1f °C]"				<selfTemperature> 	(PersistentChart,ServerTemperature) 	{http="<[systemInfoCache:300000:XSLT(systemHarddisk0Temp.xsl)]"}
+//String HardDisk0_Status							"HDD SSD [%s]"					<selfTemperature> 	 								{http="<[systemInfoCache:300000:XSLT(systemHarddisk0Status.xsl)]"}
+//String HardDisk0_Info							"HDD SSD [%s]"					<selfTemperature> 	(ServerInfo) 					{http="<[systemInfoCache:300000:XSLT(systemHarddisk0Info.xsl)]"}
+//Number HardDisk1_Temp							"HDD Data [%.1f °C]"			<selfTemperature> 	(PersistentChart,ServerTemperature) 	{http="<[systemInfoCache:300000:XSLT(systemHarddisk1Temp.xsl)]"}
+//String HardDisk1_Status							"HDD Data [%s]"					<selfTemperature> 		 							{http="<[systemInfoCache:300000:XSLT(systemHarddisk1Status.xsl)]"}
+//String HardDisk1_Info							"HDD Data [%s]"					<selfTemperature> 	(ServerInfo) 					{http="<[systemInfoCache:300000:XSLT(systemHarddisk1Info.xsl)]"}
+//Number HardDisk2_Temp							"HDD Raid 1 [%.1f °C]"			<selfTemperature> 	(PersistentChart,ServerTemperature) 	{http="<[systemInfoCache:300000:XSLT(systemHarddisk2Temp.xsl)]"}
+//String HardDisk2_Status							"HDD Raid 1 [%s]"				<selfTemperature> 		 							{http="<[systemInfoCache:300000:XSLT(systemHarddisk2Status.xsl)]"}
+//String HardDisk2_Raid							"HDD Raid 1 [%s]"				<selfTemperature> 		 							{http="<[systemInfoCache:300000:XSLT(systemHarddisk2Raid.xsl)]"}
+//String HardDisk2_Info							"HDD Raid 1 [%s]"				<selfTemperature> 	(ServerInfo) 					{http="<[systemInfoCache:300000:XSLT(systemHarddisk2Info.xsl)]"}
+//Number HardDisk3_Temp							"HDD Raid 2 [%.1f °C]"			<selfTemperature> 	(PersistentChart,ServerTemperature) 	{http="<[systemInfoCache:300000:XSLT(systemHarddisk3Temp.xsl)]"}
+//String HardDisk3_Status							"HDD Raid 2 [%s]"				<selfTemperature> 		 							{http="<[systemInfoCache:300000:XSLT(systemHarddisk3Status.xsl)]"}
+//String HardDisk3_Raid							"HDD Raid 2 [%s]"				<selfTemperature> 		 							{http="<[systemInfoCache:300000:XSLT(systemHarddisk3Raid.xsl)]"}
+//String HardDisk3_Info							"HDD Raid 2 [%s]"				<selfTemperature> 	(ServerInfo) 					{http="<[systemInfoCache:300000:XSLT(systemHarddisk3Info.xsl)]"}
+//
+//String RaidInfo									"Raidstatus [%s]"				<selfHarddisk> 		(ServerInfo) 					{http="<[systemInfoCache:300000:XSLT(systemRaidInfo.xsl)]"}
+//
+//String Temp_Info             					"Temp [%s]"                     <selfTemperature>	(ServerInfo)   					{http="<[systemInfoCache:300000:XSLT(systemTempInfo.xsl)]"}
+//Number CPUTemp									"CPU [%.1f °C]"					<selfTemperature> 	(PersistentChart,ServerTemperature)		{http="<[systemInfoCache:300000:XSLT(systemCPUTemp.xsl)]"}
+//Number SystemTemp								"System [%.1f °C]"				<selfTemperature> 	(PersistentChart,ServerTemperature)		{http="<[systemInfoCache:300000:XSLT(systemSystemTemp.xsl)]"}
+//Number FanSpeed									"Lüfter [%d RPM]"				<selfAiring> 		(ServerInfo)					{http="<[systemInfoCache:300000:XSLT(systemFanSpeed.xsl)]"}
+//
+//String MainStatus								"Status [%s]"					<selfError>
+//
+//String VoiceCommand
+//
+//Switch Scene1									"Scene 1"						<settings>
+//Switch Scene2									"Scene 2"						<settings>
+//Switch Scene3									"Scene 3"						<settings>
+//Switch Scene4									"Scene 4"						<settings>
+//Switch Scene5									"Scene 5"						<settings>
+//Switch Scene6									"Scene 6"						<settings>
+//Switch Scene7									"Scene 7"						<settings>
+//Switch Scene8									"Scene 8"						<settings>
+//Switch Scene9									"Scene 9"						<settings>

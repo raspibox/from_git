@@ -1,0 +1,17 @@
+Strategies {
+	// for rrd, we need a cron strategy
+	everyMinute : "0 * * * * ?"
+}
+
+Items {
+  
+	// let's only store temperature values in rrd
+	PersistentChart* : strategy = everyMinute, restoreOnStartup
+	Watt_Chart* : strategy = everyMinute, restoreOnStartup
+	Temp_Chart* : strategy = everyMinute, restoreOnStartup
+	
+		
+	// for measurement values, we define archives that are suitable for charts
+	
+	
+}

@@ -1,0 +1,59 @@
+sitemap eiler label="Main Menu" 
+{
+	Frame {
+		Group item=group_Heizung 	label="Heizung" 	icon="fire-on"
+		Group item=group_Information 	label="Info" 	icon="pie"
+			
+		Group item=group_Keller 	label="Keller" 	icon="cellar"	
+		Group item=group_Aussen 	label="Garten"	icon="garden" 
+	}
+	Frame label="Information"	{
+		Text item=Information  {
+			Frame {
+				Switch item=Watt_Chart_Period label="Chart" mappings=[0="1h", 1="24h", 2="7d", 3="30d", 4="Year"]
+				Chart item=Watt_Chart period=h refresh=10000  visibility=[Watt_Chart_Period==0, Watt_Chart_Period=="Uninitialized"]
+				Chart item=Watt_Chart period=D refresh=30000 visibility=[Watt_Chart_Period==1]
+				Chart item=Watt_Chart period=W refresh=30000 visibility=[Watt_Chart_Period==2]
+				Chart item=Watt_Chart period=M refresh=30000 visibility=[Watt_Chart_Period==3]
+				Chart item=Watt_Chart period=Y refresh=30000 visibility=[Watt_Chart_Period==4]
+			}
+		}
+	}
+			 
+		
+	Frame {
+			Selection item=KWL label="Raumlüftung" mappings=[0="Aus", 1="Stufe 1",2="Stufe 2",3=Max]
+			/* Switch item=KWL label="KWL" mappings=[0=Null, 1=Eins, 2=Zwei, 3=Max] */
+	}
+			
+	Frame label="Heizung" {
+	Text item=Weather_Temperature valuecolor=[Weather_LastUpdate=="Uninitialized"="lightgray",Weather_LastUpdate>90="lightgray",>25="orange",>15="green",>5="orange",<=5="blue"] {
+		Frame {
+			Text item=Weather_Temp_Max valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
+			Text item=Weather_Temp_Min valuecolor=[>25="orange",>15="green",>5="orange",<=5="blue"]
+			Text item=Weather_Humidity
+			Text item=Weather_Humidex
+			Text item=Weather_LastUpdate visibility=[Weather_LastUpdate>30] valuecolor=[Weather_LastUpdate>120="orange", Weather_LastUpdate>300="red"]
+		}
+		
+			Frame {
+				Switch item=Temp_Chart_Period label="Temp" mappings=[0="1h", 1="24h", 2="7d", 3="30d", 4="Year"]
+				Chart item=Temp_Chart period=h refresh=10000  visibility=[Temp_Chart_Period==0, Temp_Chart_Period=="Uninitialized"]
+				Chart item=Temp_Chart period=D refresh=30000 visibility=[Temp_Chart_Period==1]
+				Chart item=Temp_Chart period=W refresh=30000 visibility=[Temp_Chart_Period==2]
+				Chart item=Temp_Chart period=M refresh=30000 visibility=[Temp_Chart_Period==3]
+				Chart item=Temp_Chart period=Y refresh=30000 visibility=[Temp_Chart_Period==4]
+			}
+		
+	}
+}		
+	Frame {
+				Switch item=Watt_Chart_Period label="Chart" mappings=[0="1h", 1="24h", 2="7d", 3="30d", 4="Year"]
+				Chart item=Watt_Chart period=h refresh=10000  visibility=[Watt_Chart_Period==0, Watt_Chart_Period=="Uninitialized"]
+				Chart item=Watt_Chart period=D refresh=30000 visibility=[Watt_Chart_Period==1]
+				Chart item=Watt_Chart period=W refresh=30000 visibility=[Watt_Chart_Period==2]
+				Chart item=Watt_Chart period=M refresh=30000 visibility=[Watt_Chart_Period==3]
+				Chart item=Watt_Chart period=Y refresh=30000 visibility=[Watt_Chart_Period==4]
+			}
+		
+}

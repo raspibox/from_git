@@ -1,0 +1,54 @@
+Group All 
+Group gGF 		(All)
+Group group_Aussen 		(All)
+Group group_Keller 		(All)
+Group group_AV 		(All)
+Group group_Information 		(All)
+Group Watt_Chart				(All)
+Group gHeizung 	(All)
+
+Group Information <pie>   (All)
+
+Number Watt_Chart_Period		"Chart Period"
+Group Temp_Chart													(All)
+Number Temp_Chart_Period		"Chart Period"
+Number Temp_Brauchwasser	  	"Temperatur Brauchwasser [%s °C]"	<energy> 	(group_Information, Temp_Chart) 
+
+
+
+//Switch LED 			"LED Status"	(gGarage) { exec=">[ON:gpio -1 write 26 1] >[OFF:gpio -1 write 26 0]"}
+Switch Aussenlicht 	"Aussenlicht" (group_Aussen) { exec="<[ssh pi@garage sudo python /home/pi/from_git/garage/get_relais.py 3:60000:REGEX((.*?))] >[ON:ssh pi@garage sudo python /home/pi/from_git/garage/set_relais.py 3 ON] >[OFF:ssh pi@garage sudo python /home/pi/from_git/garage/set_relais.py 3 OFF]"}
+Switch Wasserpumpe 	"Wasserpumpe" (group_Aussen) { exec="<[ssh pi@garage sudo python /home/pi/from_git/garage/get_relais.py 1:60000:REGEX((.*?))] >[ON:ssh pi@garage sudo python /home/pi/from_git/garage/set_relais.py 1 ON] >[OFF:ssh pi@garage sudo python /home/pi/from_git/garage/set_relais.py 1 OFF]"}
+Number  Zisterne 	"Füllstand Zisterne[%.1f %%]" <cistern> (group_Aussen) { exec="<[ssh pi@garage sudo python /home/pi/from_git/garage/wasserstand_pur.py:60000:REGEX((.*?))]"}
+/* Dimmer d_Zisterne 	"Füllstand [%.1f %%]" <cistern> (group_Aussen) { exec="<[ssh pi@garage sudo python /home/pi/from_git/garage/wasserstand_pur.py:600000:REGEX((.*?))]"} */
+Contact Garage 		"Garagentor [MAP(my.map):%s]" 	<garagedoor> (group_Aussen) { exec="<[ssh pi@garage sudo python /home/pi/from_git/garage/get_pin.py 23:10000:REGEX((.*?))]"} 
+Number KWL			"KWL"					<fan>
+
+
+// shows the sunrise
+DateTime Sunrise_Time  "Sunrise [%1$tH:%1$tM]" (group_Information) {astro="planet=sun, type=rise, property=start"}
+DateTime Sunset_Time  "Sunset [%1$tH:%1$tM]" (group_Information) {astro="planet=sun, type=set, property=start"}
+
+// schedules a event which starts at sunrise, updating the Switch with ON, followed by a OFF
+Switch Sunset_Event   (group_Information) {astro="planet=sun, type=set, property=start"}
+Switch Sunrise_Event   (group_Information) {astro="planet=sun, type=rise, property=start"}
+
+
+
+//Number Strom_Zaehler "EHZ [%.4f KWh]" (group_Aussen)
+
+Number Electricity_Watt	  		"Aktueller Verbrauch [%s Watt]"	<energy> 	(group_Information, Watt_Chart) 
+Number Electricity_KWh			"Zählerstand [%.2f KWh]"		<energy>	(group_Information)
+//Number Electricity_Watt						"Aktueller Verbrauch [%s Watt]"		<energy>		(group_Information)
+//Number Electricity_Watt						"Aktueller Verbrauch [%s Watt]"		<energy>		(Watt_Chart)
+
+
+Group Weather_Chart													(Weather)
+Number Weather_Temperature 		"Outside Temperature [%.1f °C]"	<temperature> (Weather_Chart) { http="<[http://weather.yahooapis.com/forecastrss?w=694593&u=c:60000:XSLT(yahoo_weather_temperature.xsl)]" }
+Number Weather_Humidity 		"Outside Humidity [%.1f %%]"	<temperature> (Weather) { http="<[http://weather.yahooapis.com/forecastrss?w=694593&u=c:60000:XSLT(yahoo_weather_humidity.xsl)]" }
+Number Weather_Humidex			"Humidex [SCALE(humidex.scale):%s]" 			(Weather)
+Number Weather_Temp_Max 		"Todays Maximum [%.1f °C]"	<temperature> (Weather_Chart)
+Number Weather_Temp_Min 		"Todays Minimum [%.1f °C]"	<temperature> (Weather_Chart)
+Number Weather_Chart_Period		"Chart Period"
+DateTime Weather_LastUpdate		"Last Update [%1$ta %1$tR]"	<clock>
+

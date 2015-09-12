@@ -253,6 +253,13 @@ sub sendeTemp {
 	print "$CurlParam\n";	
 	if (not $debug) {$ret = `$CurlParam`};
 	print "ret: $ret\n";        
+
+        $CurlParam = "curl -k -u test:test "https://v22014112487321430.yourvserver.net:8089/services/receivers/simple -d T_Brauchwasser=" . getTempValue("P4") ;
+        print "$CurlParam\n";
+        if (not $debug) {$ret = `$CurlParam`};
+        print "ret: $ret\n";
+
+
 	#print "para: $sHTTPGetStringParameter\n";
 	#&wlf ("Sending request to VZ");
     #    if (not $debug) {$ret = `curl -d "" "http://10.0.0.50/middleware.php/data/7e9b8a70-37a0-11e4-b8b1-7dbd4d4a8024.json?value=$sHTTPGetStringParameter"`};

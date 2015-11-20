@@ -1,0 +1,5 @@
+sudo tar xvzf forwarder-for-linux-arm-raspberry-pi_10.tgz -C /opt/
+cd /opt/splunkforwarder/bin/
+sudo ./splunk start --accept-license
+sudo ./splunk enable boot-start
+sudo ./splunk add forward-server v2***.net:9997 -auth admin:changeme

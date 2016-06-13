@@ -4,14 +4,23 @@ import subprocess
 from datetime import datetime
 import time
 import sys
+from time import strftime
+
+def getISOTimeStamp():
+    return(strftime("%Y-%m-%dT%H:%M:%S"))
+
+#print(getISOTimeStamp())
+#print(datum)
+
+#LOG=open("/var/log/eiler/strom.log","a")
 
 # Check if parameter 1 (Debug level) is set 
 if len(sys.argv) >= 2:
-	dbg_level = int(sys.argv[1])
+    dbg_level = int(sys.argv[1])
 else:
-	# Set debug level to no output
-	dbg_level = 0
-	
+    # Set debug level to no output
+    dbg_level = 0
+    
 
 
 
@@ -38,83 +47,105 @@ returncode = subprocess.check_output('/bin/stty -F /dev/ttyUSB0 1:0:8bd:0:3:1c:7
 
 true = 1
 while true:
-	# increment loop_counter
-	loop_counter = loop_counter + 1
-	# Get data from serial device
-	sml_message = str(subprocess.check_output('cat /dev/ttyUSB0 2>/dev/null | xxd -p -u -l 324 -c 324', shell=True))
-	if dbg_level == 2: print (sml_message)
-	
-	
-	# Find start position of OBIS 1.8.0 
-	Position_Zaehlerstand = sml_message.find(Suchstring_Zaehlerstand)
-	
-	# ####################################################################
-	# Find start position of OBIS xx 
-	Position_AktuelleLeistung = sml_message.find(Suchstring_AktuelleLeistung)
-	if Position_AktuelleLeistung < 0:
-		print("String AktuelleLeistung konnte nicht gefunden werden")
-		continue
-	
-	if dbg_level == 2: print ("Position_AktuelleLeistung: ",Position_AktuelleLeistung)
-	# After we found start position we cut out requested data
-	Substring_AktuelleLeistung = sml_message[Position_AktuelleLeistung+30:Position_AktuelleLeistung+38]
-	#print (Substring_AktuelleLeistung)
-	
-	# Check if returened date has expected size of 8 char.
-	if len(Substring_AktuelleLeistung) < 8:
-		print("Something was wrong. Date not long enough!")
-		continue
-	
-	
-	if "\\" in Substring_AktuelleLeistung:
-		print("String contains EOL char. Skipping.", Substring_AktuelleLeistung)
-		continue
-	
-	
-	#Convert Hex data to a integer
-	Watt = int(Substring_AktuelleLeistung,16) 
-	if dbg_level: print ("Aktuelle Abnahme in Watt: ", Watt)
-	
-	Watt_String = str(Watt)
-	cmd = 'curl -X PUT -H "Content-Type: text/plain" -d ' + Watt_String + ' "http://sd-defekt:8080/rest/items/Electricity_Watt/state"'
-	# print (cmd)
-	os.system(cmd)
-	
-		
-	# get Zaehlerstand only every X loops
-	if loop_counter % loop_modulo == 0 :
-			# After we found start position we cut out requested data
-		Substring_Zaehlerstand = sml_message[Position_Zaehlerstand+36:Position_Zaehlerstand+52]
-		if dbg_level == 2: print (Substring_Zaehlerstand)
-		#print (len(Substring_Zaehlerstand))
-		
-		# Check if returened date has expected size of 16 char.
-		if len(Substring_Zaehlerstand) < 16:
-			print("Something was wrong. Data not long enough!")
-			continue
-		
-		if "\\" in Substring_Zaehlerstand:
-			print("String contains EOL char. Skipping.", Substring_Zaehlerstand)
-			continue
-		
-		
-		# Convert extract into a int
-		ZaehlerstandExtraxt_Int = int(Substring_Zaehlerstand,16)
-		#print ("2:", ZaehlerstandExtraxt_Int)
-		
-		
-	
-		
-		KWh_Float = float(ZaehlerstandExtraxt_Int / 10000.0)
-		if dbg_level: print ("Zaehlerstand in KWh", KWh_Float)
-		
-		#Convert to a string as otherwise curl wont work
-		KWh_String = str(KWh_Float)
-		#print (KWh_String)
-		
-		cmd = 'curl -X PUT -H "Content-Type: text/plain" -d ' + KWh_String + ' "http://sd-defekt:8080/rest/items/Electricity_KWh/state"'
-		# print (cmd)
-		os.system(cmd)
-		#time.sleep(5)
-	
-	
+    LOG=open("/var/log/eiler/strom.log","a")
+    # increment loop_counter
+    loop_counter = loop_counter + 1
+    # Get data from serial device
+    sml_message = str(subprocess.check_output('cat /dev/ttyUSB0 2>/dev/null | xxd -p -u -l 324 -c 324', shell=True))
+    
+    text="\n"+getISOTimeStamp()+";---- Start" 
+    if dbg_level == 2: print (text)
+    if dbg_level == 2: print (sml_message)
+    
+    
+    # Find start position of OBIS 1.8.0 
+    Position_Zaehlerstand = sml_message.find(Suchstring_Zaehlerstand)
+    if dbg_level == 2: print ("Position_Zaehlerstand: ",Position_Zaehlerstand)
+    if Position_Zaehlerstand < 0:
+        print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ String Zaehlerstand konnte nicht gefunden werden")
+        continue
+
+    
+    # ####################################################################
+    # Find start position of OBIS xx 
+    Position_AktuelleLeistung = sml_message.find(Suchstring_AktuelleLeistung)
+    if Position_AktuelleLeistung < 0:
+        print("String AktuelleLeistung konnte nicht gefunden werden")
+        continue
+        
+    if dbg_level == 2: print ("Position_AktuelleLeistung: ",Position_AktuelleLeistung)
+    # After we found start position we cut out requested data
+    Substring_AktuelleLeistung = sml_message[Position_AktuelleLeistung+30:Position_AktuelleLeistung+38]
+    #print (Substring_AktuelleLeistung)
+    
+    # Check if returened date has expected size of 8 char.
+    if len(Substring_AktuelleLeistung) < 8:
+        print("Something was wrong. Date not long enough!")
+        text=getISOTimeStamp()+";ERR=Something was wrong. Data not long enough!\n"
+        LOG.write (text)        
+        continue
+    
+    
+    if "\\" in Substring_AktuelleLeistung:
+        print("String contains EOL char. Skipping.", Substring_AktuelleLeistung)
+        text=getISOTimeStamp()+";ERR=String contains EOL char. Skipping\n"
+        LOG.write (text)
+        continue
+    
+    
+    #Convert Hex data to a integer
+    if dbg_level == 2: print ("Substring_AktuelleLeistung:",Substring_AktuelleLeistung)
+
+    Watt = int(Substring_AktuelleLeistung,16) 
+    if dbg_level: print ("Aktuelle Abnahme in Watt: ", Watt)
+    
+    Watt_String = str(Watt)
+    cmd = 'curl -X PUT -H "Content-Type: text/plain" -d ' + Watt_String + ' "http://sd-defekt:8080/rest/items/Electricity_Watt/state"'
+    print (cmd)
+    #os.system(cmd)
+    text=getISOTimeStamp()+";Watt="+Watt_String+";"
+    LOG.write (text)
+
+    
+        
+    # get Zaehlerstand only every X loops
+#    if loop_counter % loop_modulo == 0 :
+            # After we found start position we cut out requested data
+    Substring_Zaehlerstand = sml_message[Position_Zaehlerstand+36:Position_Zaehlerstand+52]
+    if dbg_level == 2: print ("Substring_Zaehlerstand:",Substring_Zaehlerstand)
+    #print (len(Substring_Zaehlerstand))
+    
+    # Check if returened date has expected size of 16 char.
+    if len(Substring_Zaehlerstand) < 16:
+        print("Something was wrong. Data not long enough!")
+        continue
+    
+    if "\\" in Substring_Zaehlerstand:
+        print("String contains EOL char. Skipping.", Substring_Zaehlerstand)
+        continue
+    
+    
+    # Convert extract into a int
+    ZaehlerstandExtraxt_Int = int(Substring_Zaehlerstand,16)
+    #print ("2:", ZaehlerstandExtraxt_Int)
+
+    
+
+    
+    KWh_Float = float(ZaehlerstandExtraxt_Int / 10000.0)
+    if dbg_level: print ("Zaehlerstand in KWh", KWh_Float)
+    # if KWh_Float > 15000 : print ("++++++++++++++++++++++++++++", KWh_Float) 
+    #Convert to a string as otherwise curl wont work
+    KWh_String = str(KWh_Float)
+    #print (KWh_String)
+    
+    #if loop_counter % loop_modulo == 0 :
+    cmd = 'curl -X PUT -H "Content-Type: text/plain" -d ' + KWh_String + ' "http://sd-defekt:8080/rest/items/Electricity_KWh/state"'
+    print (cmd)
+    #os.system(cmd)
+    #time.sleep(5)
+#    LOG.write (getISOTimeStamp())
+    LOG.write ("KWh=")
+    LOG.write (KWh_String)
+    LOG.write (";\n")
+    LOG.close()
